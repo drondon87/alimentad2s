@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -13,17 +13,21 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { EffectsArray } from './store/effects';
+import { RouterModule } from '@angular/router';
+import { PagesModule } from './pages/pages.module';
+import { AuthHttpIntercerptorService } from './services/auth-http-intercerptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule,
+    PagesModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(EffectsArray),
     StoreDevtoolsModule.instrument({
@@ -31,9 +35,11 @@ import { EffectsArray } from './store/effects';
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     AuthModule,
-    SharedModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    {  provide: HTTP_INTERCEPTORS, useClass: AuthHttpIntercerptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

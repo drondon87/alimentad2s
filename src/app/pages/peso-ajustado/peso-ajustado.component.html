@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <h4>Cálculo del Peso Ajustado</h4>
+    </div>
+</div>
+<hr>
+<form *ngIf="!respuesta" [formGroup]="pesoAjustadoForm" (ngSubmit)="calcularPesoAjustado()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Peso (Kg)</label>
+            <input type="number" class="form-control" formControlName="pesoKg" id="pesoKg" placeholder="Peso">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Peso Recomendado (Kg)</label>
+            <input type="number" class="form-control" formControlName="pesoRecomendado" id="pesoRecomendado" placeholder="Peso Recomendado">
+        </div>
+    </div>
+    <button type="submit" [disabled]="pesoAjustadoForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>Calcular</button>
+</form>
+<div *ngIf="respuesta">
+    <div class="form-row">
+        <div class="col-md-6">
+            <b>Peso Ajustado:</b> &nbsp;&nbsp; {{pesoAjustadoRes.pesoTotalAjustado}} Kgs
+        </div>
+    </div>
+    <div class="form-row mt-2">
+        <div class="col-md-6">
+            <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;Volver</button>
+        </div>
+    </div>
+
+</div>

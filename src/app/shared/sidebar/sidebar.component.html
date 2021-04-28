@@ -26,19 +26,33 @@
             </a>
         </li>
 
-        <!-- <li class="nav-item">
-            <a routerLink="/ingreso-egreso" class="nav-link">
+        <li class="nav-item">
+            <a (click)="goTo('pesoAjustado')" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-clipboard-list"></i>
-                <span class="menu-title">Core</span>
+                <span class="menu-title">Peso Ajustado</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a routerLink="/detalle" class="nav-link">
-                <i class="menu-icon fa fa-table"></i>
-                <span class="menu-title">Detalle</span>
+            <a (click)="goTo('antropediaAdulto')" class="nav-link cursor-pointer">
+                <i class="menu-icon fa fa-clipboard-list"></i>
+                <span class="menu-title">Antropedia Adulto</span>
             </a>
-        </li> -->
+        </li>
+
+        <li class="nav-item">
+            <a (click)="goTo('requerimientoAdulto')" class="nav-link cursor-pointer">
+                <i class="menu-icon fa fa-clipboard-list"></i>
+                <span class="menu-title">Requerimiento Adulto</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a (click)="goTo('formulaDietetica')" class="nav-link cursor-pointer">
+                <i class="menu-icon fa fa-clipboard-list"></i>
+                <span class="menu-title">Formula Dietética</span>
+            </a>
+        </li>
 
         <li class="nav-item">
             <a (click)="cerrarSesion()" class="nav-link cursor-pointer">

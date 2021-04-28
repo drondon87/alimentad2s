@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { UserLogin } from 'src/app/models/UserLogin.model';
 import { loginUser, loginUserSuccess, loginUserError } from '../actions/';
+import { logoutUser } from '../actions/userLogin.actions';
 
 export interface UserloginState {
     userLogin: UserLogin,
@@ -18,7 +19,7 @@ export const userLoginInitialState: UserloginState = {
 
 const _userloginReducer = createReducer(userLoginInitialState,
 
-    on(loginUser, (state, { username, password } ) => ({ ...state, username , password, error: null})),
+    on(loginUser, (state, { username, password } ) => ({ ...state, error: null})),
     on(loginUserSuccess, (state, { userLogin }) => ({ 
         ...state, 
         loading: false, 
@@ -39,6 +40,10 @@ const _userloginReducer = createReducer(userLoginInitialState,
         },
         userLogin: null
     })),
+    on(logoutUser, state => ({ ...state, userLogin: null,
+        loaded: false,
+        loading: false,
+        error: null}))
 
 );
 

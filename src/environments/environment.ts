@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  authenticate: 'http://localhost:8080/authenticate'
+  authenticate: 'http://localhost:8080/authenticate',
+  base_url: 'http://localhost:8080/api/v1'
 };
 
 /*

@@ -11,7 +11,7 @@ export class UserLoginEffects {
     constructor(private accions$: Actions,
         private _authServices: AuthService ){}
 
-        userLogin$ = createEffect(
+    userLogin$ = createEffect(
         () => this.accions$.pipe(
             ofType(userLoginActions.loginUser),
             mergeMap(

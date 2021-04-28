@@ -20,4 +20,8 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  goTo(ruta: string){
+    this.router.navigate([`pages/${ruta}`]);
+  }
+
 }
