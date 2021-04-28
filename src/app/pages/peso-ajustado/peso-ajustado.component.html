@@ -19,7 +19,7 @@
 </form>
 <div *ngIf="respuesta">
     <div class="form-row">
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="pesoAjustadoRes">
             <b>Peso Ajustado:</b> &nbsp;&nbsp; {{pesoAjustadoRes.pesoTotalAjustado}} Kgs
         </div>
     </div>
