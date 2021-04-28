@@ -23,7 +23,35 @@
             "RECOMMENDED_WEIGHT": "Recommended Weight (Kgs):",
             "SEX": "Sex:",
             "AGE": "Age:",
-            "HEIGHT": "Height (Mts):"
+            "HEIGHT": "Height (Mts):",
+            "WIRST_CIRCUMFERENCE": "Wrist Circumference (cm):",
+            "ARM_CIRCUMFERENCE": "Arm Circumference (cm):",
+            "WAIST_CIRCUMFERENCE": "Waist Circumference (cm):",
+            "HIP_CIRCUMFERENCE": "Hip Circumference (cm):",
+            "TRICEPS_FOLD": "Triceps Fold (mm):",
+            "SUBSCAPULAR_FOLD": "Subscapular Fold (mm):",
+            "BICEPS_FOLD": "Biceps Fold (mm):",
+            "SUPRAILIAC_FOLD": "Suprailiac Fold (mm):",
+            "DESIRABLE_BODY_FAT": "% Desirable Body Fat:",
+            "ACTIVITY_FACTOR": "Activity Factor:",
+            "DIRECT_METHOD": "Kcal (direct method):",
+            "PHYSICAL_ACTIVITY_LEVEL": "Physical Activity Level:",
+            "FAT_FREE_DOUGH": "Fat Free Dough:",
+            "ACTUAL_WEIGHT_C_METHOD": "Actual Weight (cunningham method):",
+            "PHYSICAL_ACTIVITY_TIME": "Physical Activity Time:",
+            "PHYSICAL_ACTIVITY_METRIC": "Physical Activity Metric:",
+            "COMBO": {
+                "SEX_TITLE": "Sex",
+                "MALE_TITLE": "Male",
+                "FEMALE_TITLE": "Female",
+                "MILD": "Mild",
+                "MODERATE": "Moderate",
+                "STRONG": "Strong",
+                "VERY_STRONG": "Very Strong",
+                "LIGHT": "Light",
+                "INTENSE": "Intense"
+            }
+
         },
         "ANSWERS": {
             "ADJUSTED_WEIGHT": "Adjusted Weight:"
@@ -31,6 +59,17 @@
     },
     "TITLES": {
         "ADJUSTED_WEIGHT": "Adjusted Weight Calculation",
-        "ADULT_ANTHROPEDIA": "Adult Anthropedia Calculation"
+        "ADULT_ANTHROPEDIA": "Adult Anthropedia Calculation",
+        "ADULT_REQUIREMENT": "Adult Requirement Calculation"
+    },
+    "VALIDATIONS": {
+        "AUTH": {
+            "USER": "Username is required",
+            "PASSWORD": "Password is required"
+        },
+        "MEASURES": {
+            "WEIGHT": "Weight is required",
+            "RECOMMENDED_WEIGHT": "Recommended is required"
+        }
     }
 }

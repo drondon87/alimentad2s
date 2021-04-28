@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AntropediaAdultoComponent } from './antropedia-adulto.component';
 import { AntropediaAdultoRoutingModule } from './antropedia-adulto-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     CommonModule,
     AntropediaAdultoRoutingModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ]
 })
 export class AntropediaAdultoModule { }

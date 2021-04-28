@@ -4,24 +4,70 @@
     </div>
 </div>
 <hr>
-<!-- <form> -->
-<div class="form-row">
-    <div class="form-group col-md-3">
-        <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
-        <input type="text" class="form-control" id="sexo">
+<form [formGroup]="antropediaForm">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
+            <select class="custom-select" class="form-control" id="sexo" formControlName="sexo">
+            <option></option>
+            <option value="M">{{ 'PAGES.MEASURES.COMBO.MALE_TITLE' | translate }}</option>
+            <option value="F">{{ 'PAGES.MEASURES.COMBO.FEMALE_TITLE' | translate }}</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
+            <input type="number" class="form-control" id="edad" formControlName="edad">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.HEIGHT' | translate }}</label>
+            <input type="number" class="form-control" id="estatura" formControlName="estatura">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.WEIGHT' | translate }}</label>
+            <input type="number" class="form-control" id="peso" formControlName="peso">
+        </div>
     </div>
-    <div class="form-group col-md-3">
-        <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
-        <input type="text" class="form-control" id="edad">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.WIRST_CIRCUMFERENCE' | translate }}</label>
+            <input type="number" class="form-control" id="cmuneca" formControlName="cmuneca">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.ARM_CIRCUMFERENCE' | translate }}</label>
+            <input type="number" class="form-control" id="cbi" formControlName="cbi">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.WAIST_CIRCUMFERENCE' | translate }}</label>
+            <input type="number" class="form-control" id="ccintura" formControlName="ccintura">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.HIP_CIRCUMFERENCE' | translate }}</label>
+            <input type="number" class="form-control" id="ccadera" formControlName="ccadera">
+        </div>
     </div>
-    <div class="form-group col-md-3">
-        <label>{{ 'PAGES.MEASURES.HEIGHT' | translate }}</label>
-        <input type="text" class="form-control" id="estatura">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.TRICEPS_FOLD' | translate }}</label>
+            <input type="number" class="form-control" id="ptriceps" formControlName="ptriceps">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.SUBSCAPULAR_FOLD' | translate }}</label>
+            <input type="number" class="form-control" id="psubescapular" formControlName="psubescapular">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.BICEPS_FOLD' | translate }}</label>
+            <input type="number" class="form-control" id="pbiceps" formControlName="pbiceps">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.SUPRAILIAC_FOLD' | translate }}</label>
+            <input type="number" class="form-control" id="psuprailiaco" formControlName="psuprailiaco">
+        </div>
     </div>
-    <div class="form-group col-md-3">
-        <label>{{ 'PAGES.MEASURES.WEIGHT' | translate }}</label>
-        <input type="text" class="form-control" id="peso">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.DESIRABLE_BODY_FAT' | translate }}</label>
+            <input type="number" class="form-control" id="porcentajeGCD" formControlName="porcentajeGCD">
+        </div>
     </div>
-</div>
-<button type="submit" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
-<!-- </form> -->
+    <button type="submit" [disabled]="antropediaForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
+</form>

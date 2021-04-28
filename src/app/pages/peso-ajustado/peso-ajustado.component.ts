@@ -22,6 +22,10 @@ export class PesoAjustadoComponent implements OnInit, OnDestroy {
   error: any;
   respuesta: boolean;
 
+  get pesoKg(){ return this.pesoAjustadoForm.get('pesoKg'); }
+
+  get pesoRecomendado(){ return this.pesoAjustadoForm.get('pesoRecomendado'); }
+
   constructor(private fb: FormBuilder,
               private store: Store<AppState>) { }
 

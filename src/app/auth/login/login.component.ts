@@ -20,6 +20,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   loading: boolean = false;
   error: any;
   usuarioSubs: Subscription;
+  color = 'red';
+
+  get username() { return this.loginForm.get('username'); }
+
+  get password() { return this.loginForm.get('password'); }
 
   constructor(private fb: FormBuilder,
               private store: Store<AppState>,

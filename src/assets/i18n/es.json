@@ -23,7 +23,34 @@
             "RECOMMENDED_WEIGHT": "Peso Recomendado (Kgs):",
             "SEX": "Sexo:",
             "AGE": "Edad:",
-            "HEIGHT": "Estatura (Mts):"
+            "HEIGHT": "Estatura (Mts):",
+            "WIRST_CIRCUMFERENCE": "Circunsferencia Muñeca (cm):",
+            "ARM_CIRCUMFERENCE": "Circunsferencia brazo (cm):",
+            "WAIST_CIRCUMFERENCE": "Circunsferencia Cintura (cm):",
+            "HIP_CIRCUMFERENCE": "Circunsferencia Cadera (cm):",
+            "TRICEPS_FOLD": "Pliegue Triceps (mm):",
+            "SUBSCAPULAR_FOLD": "Pliegue Subescapular (mm):",
+            "BICEPS_FOLD": "Pliegue Biceps (mm):",
+            "SUPRAILIAC_FOLD": "Pliegue Suprailíaco (mm):",
+            "DESIRABLE_BODY_FAT": "% Grasa Corporal Deseable:",
+            "ACTIVITY_FACTOR": "Factor Actividad:",
+            "DIRECT_METHOD": "Kcal (método directo):",
+            "PHYSICAL_ACTIVITY_LEVEL": "Nivel Actividad Física:",
+            "FAT_FREE_DOUGH": "Masa Libre de Grasa:",
+            "ACTUAL_WEIGHT_C_METHOD": "Peso Actual (método cunningham):",
+            "PHYSICAL_ACTIVITY_TIME": "Tiempo Actividad Física:",
+            "PHYSICAL_ACTIVITY_METRIC": "Métrica Actividad Física:",
+            "COMBO": {
+                "SEX_TITLE": "Sexo",
+                "MALE_TITLE": "Masculino",
+                "FEMALE_TITLE": "Femenino",
+                "MILD": "Leve",
+                "MODERATE": "Moderada",
+                "STRONG": "Fuerte",
+                "VERY_STRONG": "Muy Fuerte",
+                "LIGHT": "Ligero",
+                "INTENSE": "Intenso"
+            }
         },
         "ANSWERS": {
             "ADJUSTED_WEIGHT": "Peso Ajustado:"
@@ -31,6 +58,17 @@
     },
     "TITLES": {
         "ADJUSTED_WEIGHT": "Cálculo del Peso Ajustado",
-        "ADULT_ANTHROPEDIA": "Cálculo de Antropédia Adulto"
+        "ADULT_ANTHROPEDIA": "Cálculo de Antropédia Adulto",
+        "ADULT_REQUIREMENT": "Cálculo del Requerimiento Adulto"
+    },
+    "VALIDATIONS": {
+        "AUTH": {
+            "USER": "Usuario es obligatorio",
+            "PASSWORD": "Contraseña es obligatoria"
+        },
+        "MEASURES": {
+            "WEIGHT": "Peso es obligatorio",
+            "RECOMMENDED_WEIGHT": "Peso Recomendado es obligatorio"
+        }
     }
 }
