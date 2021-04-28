@@ -22,42 +22,42 @@
         <li class="nav-item">
             <a routerLink="/" class="nav-link">
                 <i class="menu-icon fa fa-tachometer-alt"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">{{ 'MENU.DASHBOARD' | translate }}</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a (click)="goTo('pesoAjustado')" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-clipboard-list"></i>
-                <span class="menu-title">Peso Ajustado</span>
+                <span class="menu-title">{{ 'MENU.ADJUSTED_WEIGHT' | translate }}</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a (click)="goTo('antropediaAdulto')" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-clipboard-list"></i>
-                <span class="menu-title">Antropedia Adulto</span>
+                <span class="menu-title">{{ 'MENU.ADULT_ANTHROPEDIA' | translate }}</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a (click)="goTo('requerimientoAdulto')" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-clipboard-list"></i>
-                <span class="menu-title">Requerimiento Adulto</span>
+                <span class="menu-title">{{ 'MENU.ADULT_REQUIREMENT' | translate }}</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a (click)="goTo('formulaDietetica')" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-clipboard-list"></i>
-                <span class="menu-title">Formula Dietética</span>
+                <span class="menu-title">{{ 'MENU.DIETARY_FORMULA' | translate }}</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a (click)="cerrarSesion()" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-sign-out-alt"></i>
-                <span class="menu-title">Cerrar sesión</span>
+                <span class="menu-title">{{ 'MENU.LOGOUT' | translate }}</span>
             </a>
         </li>
 

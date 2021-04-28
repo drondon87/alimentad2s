@@ -1,19 +1,27 @@
 <div class="row">
     <div class="col-12">
-        <h4>Cálculo de Antropédia Adulto</h4>
+        <h4>{{ 'TITLES.ADULT_ANTHROPEDIA' | translate }}</h4>
     </div>
 </div>
 <hr>
 <!-- <form> -->
 <div class="form-row">
-    <div class="form-group col-md-6">
-        <label>Sexo:</label>
-        <input type="text" class="form-control" id="pesoKg" placeholder="Peso">
+    <div class="form-group col-md-3">
+        <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
+        <input type="text" class="form-control" id="sexo">
     </div>
-    <div class="form-group col-md-6">
-        <label>Edad:</label>
-        <input type="text" class="form-control" id="pesoRecomendado" placeholder="Peso Recomendado">
+    <div class="form-group col-md-3">
+        <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
+        <input type="text" class="form-control" id="edad">
+    </div>
+    <div class="form-group col-md-3">
+        <label>{{ 'PAGES.MEASURES.HEIGHT' | translate }}</label>
+        <input type="text" class="form-control" id="estatura">
+    </div>
+    <div class="form-group col-md-3">
+        <label>{{ 'PAGES.MEASURES.WEIGHT' | translate }}</label>
+        <input type="text" class="form-control" id="peso">
     </div>
 </div>
-<button type="submit" class="btn btn-primary"><i class="fa fa-calculator"></i>Calcular</button>
+<button type="submit" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
 <!-- </form> -->

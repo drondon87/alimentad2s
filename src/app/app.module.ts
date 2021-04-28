@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -16,6 +16,8 @@ import { EffectsArray } from './store/effects';
 import { RouterModule } from '@angular/router';
 import { PagesModule } from './pages/pages.module';
 import { AuthHttpIntercerptorService } from './services/auth-http-intercerptor.service';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,14 @@ import { AuthHttpIntercerptorService } from './services/auth-http-intercerptor.s
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     AuthModule,
-    SharedModule
+    SharedModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {  provide: HTTP_INTERCEPTORS, useClass: AuthHttpIntercerptorService, multi: true }
@@ -43,3 +52,8 @@ import { AuthHttpIntercerptorService } from './services/auth-http-intercerptor.s
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}

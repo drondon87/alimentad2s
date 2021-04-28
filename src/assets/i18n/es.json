@@ -1,0 +1,36 @@
+{
+    "AUTH": {
+        "USER": "Usuario:",
+        "PASSWORD": "Contraseña:"
+    },
+    "BUTTON": {
+        "LOGIN": "Login",
+        "WAIT": "Espere ...",
+        "CALCULATE": "Calcular",
+        "BACK": "Volver"
+    },
+    "MENU": {
+        "DASHBOARD": "Dashboard",
+        "ADJUSTED_WEIGHT": "Peso Ajustado",
+        "ADULT_ANTHROPEDIA": "Antropedia Adulto",
+        "ADULT_REQUIREMENT": "Requerimiento Adulto",
+        "DIETARY_FORMULA": "Fórmula Dietética",
+        "LOGOUT": "Cerrar sesión"
+    },
+    "PAGES": {
+        "MEASURES": {
+            "WEIGHT": "Peso (Kgs):",
+            "RECOMMENDED_WEIGHT": "Peso Recomendado (Kgs):",
+            "SEX": "Sexo:",
+            "AGE": "Edad:",
+            "HEIGHT": "Estatura (Mts):"
+        },
+        "ANSWERS": {
+            "ADJUSTED_WEIGHT": "Peso Ajustado:"
+        }
+    },
+    "TITLES": {
+        "ADJUSTED_WEIGHT": "Cálculo del Peso Ajustado",
+        "ADULT_ANTHROPEDIA": "Cálculo de Antropédia Adulto"
+    }
+}

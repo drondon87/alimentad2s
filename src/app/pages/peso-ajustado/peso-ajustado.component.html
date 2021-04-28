@@ -1,31 +1,31 @@
 <div class="row">
     <div class="col-12">
-        <h4>Cálculo del Peso Ajustado</h4>
+        <h4>{{ 'TITLES.ADJUSTED_WEIGHT' | translate }}</h4>
     </div>
 </div>
 <hr>
 <form *ngIf="!respuesta" [formGroup]="pesoAjustadoForm" (ngSubmit)="calcularPesoAjustado()">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label>Peso (Kg)</label>
+            <label>{{ 'PAGES.MEASURES.WEIGHT' | translate }}</label>
             <input type="number" class="form-control" formControlName="pesoKg" id="pesoKg" placeholder="Peso">
         </div>
         <div class="form-group col-md-6">
-            <label>Peso Recomendado (Kg)</label>
+            <label>{{ 'PAGES.MEASURES.RECOMMENDED_WEIGHT' | translate }}</label>
             <input type="number" class="form-control" formControlName="pesoRecomendado" id="pesoRecomendado" placeholder="Peso Recomendado">
         </div>
     </div>
-    <button type="submit" [disabled]="pesoAjustadoForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>Calcular</button>
+    <button type="submit" [disabled]="pesoAjustadoForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
 </form>
 <div *ngIf="respuesta">
     <div class="form-row">
         <div class="col-md-6" *ngIf="pesoAjustadoRes">
-            <b>Peso Ajustado:</b> &nbsp;&nbsp; {{pesoAjustadoRes.pesoTotalAjustado}} Kgs
+            <b>{{ 'PAGES.ANSWERS.ADJUSTED_WEIGHT' | translate }}</b> &nbsp;&nbsp; {{pesoAjustadoRes.pesoTotalAjustado}} Kgs
         </div>
     </div>
     <div class="form-row mt-2">
         <div class="col-md-6">
-            <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;Volver</button>
+            <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;{{ 'BUTTON.BACK' | translate }}</button>
         </div>
     </div>
 

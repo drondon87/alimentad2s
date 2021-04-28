@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { pesoAjustadoReducer } from '../store/reducers';
 import { PagesRoutingModule } from './pages-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -14,7 +15,7 @@ import { PagesRoutingModule } from './pages-routing.module';
     CommonModule,
     ReactiveFormsModule,
     PagesRoutingModule,
-    StoreModule.forFeature('pesoAjustado', pesoAjustadoReducer),
+    StoreModule.forFeature('pesoAjustado', pesoAjustadoReducer)
   ]
 })
 export class PagesModule { }

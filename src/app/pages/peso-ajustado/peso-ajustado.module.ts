@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { PesoAjustadoComponent } from './peso-ajustado.component';
 import { PesoAjustadoRoutingModule } from './peso-ajustado-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [PesoAjustadoComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    PesoAjustadoRoutingModule
+    PesoAjustadoRoutingModule,
+    TranslateModule
   ]
 })
 export class PesoAjustadoModule { }
