@@ -5,6 +5,7 @@ import { AntropediaAdultoComponent } from './antropedia-adulto.component';
 import { AntropediaAdultoRoutingModule } from './antropedia-adulto-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AntropediaAdultoRoutingModule,
     TranslateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ]
 })
 export class AntropediaAdultoModule { }

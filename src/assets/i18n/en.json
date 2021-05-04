@@ -51,10 +51,29 @@
                 "LIGHT": "Light",
                 "INTENSE": "Intense"
             }
-
         },
         "ANSWERS": {
-            "ADJUSTED_WEIGHT": "Adjusted Weight:"
+            "ADJUSTED_WEIGHT": "Adjusted Weight:",
+            "ADULT_ANTHROPEDIA": {
+                "CONTEXT_ESTIMATION": "Context estimation:",
+                "BODY_MASS_INDEX": "Body mass index estimation:",
+                "BODY_MASS_COMPOSITION": "Body composition estimation",
+                "LEAN_AREA": "Lean area:",
+                "FAT_AREA": "Fat area:",
+                "INDEX_WAIST_HIP": "Index Waist Hip:",
+                "INDEX_WAIST_SIZE": "Index Waist Size:",
+                "SESTRI_INDEX": "Sestri index:",
+                "SIRI": "Siri:",
+                "CIRC_WAIST": "Starting Circ. Waist:",
+                "FAT_MASS": "Fat mass:",
+                "FAT_FREE_MASS": "Fat free mass:",
+                "IDEAL_WEIGHT": "Ideal weight estimation:",
+                "HAMWI": "Hamwi:",
+                "WEST": "West:",
+                "BROCA": "Broca:",
+                "IMC": "Derivatives of IMC:",
+                "MLG_WEIGHT": "Desirable weight MLG function:"
+            }
         }
     },
     "TITLES": {

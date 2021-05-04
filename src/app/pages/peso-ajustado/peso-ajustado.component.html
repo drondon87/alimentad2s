@@ -22,7 +22,7 @@
 <div *ngIf="respuesta">
     <div class="form-row">
         <div class="col-md-6" *ngIf="pesoAjustadoRes">
-            <b>{{ 'PAGES.ANSWERS.ADJUSTED_WEIGHT' | translate }}</b> &nbsp;&nbsp; {{pesoAjustadoRes.pesoTotalAjustado}} Kgs
+            <b>{{ 'PAGES.ANSWERS.ADJUSTED_WEIGHT' | translate }}</b> &nbsp;&nbsp; {{pesoAjustadoRes.pesoTotalAjustado | medidas:'K'}}
         </div>
     </div>
     <div class="form-row mt-2">

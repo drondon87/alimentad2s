@@ -4,13 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { pesoAjustadoReducer } from '../store/reducers';
 import { PagesRoutingModule } from './pages-routing.module';
-import { TranslateModule } from '@ngx-translate/core';
 
 
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     ReactiveFormsModule,

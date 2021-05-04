@@ -53,7 +53,27 @@
             }
         },
         "ANSWERS": {
-            "ADJUSTED_WEIGHT": "Peso Ajustado:"
+            "ADJUSTED_WEIGHT": "Peso Ajustado:",
+            "ADULT_ANTHROPEDIA": {
+                "CONTEXT_ESTIMATION": "Estimación Contextura:",
+                "BODY_MASS_INDEX": "Estimación del índice de masa corporal:",
+                "BODY_MASS_COMPOSITION": "Estimación de composición corporal",
+                "LEAN_AREA": "Área magra:",
+                "FAT_AREA": "Área grasa:",
+                "INDEX_WAIST_HIP": "Indice Cintura Cadera:",
+                "INDEX_WAIST_SIZE": "Indice Cintura Talla:",
+                "SESTRI_INDEX": "Indice de Sestri:",
+                "SIRI": "Siri:",
+                "CIRC_WAIST": "A partir Circ. Cintura:",
+                "FAT_MASS": "Masa Grasa:",
+                "FAT_FREE_MASS": "Masa libre grasa:",
+                "IDEAL_WEIGHT": "Estimación de peso ideal",
+                "HAMWI": "Hamwi:",
+                "WEST": "West:",
+                "BROCA": "Broca:",
+                "IMC": "Derivadas del IMC",
+                "MLG_WEIGHT": "Peso deseable función MLG:"
+            }
         }
     },
     "TITLES": {

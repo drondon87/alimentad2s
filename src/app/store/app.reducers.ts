@@ -3,10 +3,13 @@ import * as reducers from './reducers/';
 
 export interface AppState {
     userLogin: reducers.UserloginState,
-    pesoAjustado: reducers.PesoAjustadoState
+    pesoAjustado: reducers.PesoAjustadoState,
+    antropediaAdulto: reducers.AntropediaAdultoState
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
     userLogin: reducers.userloginReducer,
-    pesoAjustado: reducers.pesoAjustadoReducer
+    pesoAjustado: reducers.pesoAjustadoReducer,
+    antropediaAdulto: reducers.antropediaAdultoReducer
+
 }

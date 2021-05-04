@@ -53,5 +53,6 @@ export class AuthService {
     sessionStorage.removeItem('token');
     this.store.dispatch( actions.logoutUser());
     this.store.dispatch( actions.pesoAjustadoReset());
+    this.store.dispatch( actions.antropediaAdultoReset());
   }
 }

@@ -4,7 +4,7 @@
     </div>
 </div>
 <hr>
-<form [formGroup]="antropediaForm">
+<form [formGroup]="antropediaForm" (ngSubmit)="calcularAntropediaAdulto()" *ngIf="!respuesta">
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
@@ -71,3 +71,90 @@
     </div>
     <button type="submit" [disabled]="antropediaForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
 </form>
+<div *ngIf="respuesta">
+    <div *ngIf="antropediaAdultoRes">
+        <div class="form-row">
+            <div class="col-md-6">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.CONTEXT_ESTIMATION' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.estimacionContextura}}
+            </div>
+            <div class="col-md-6">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.BODY_MASS_INDEX' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.estimacionIMC}}
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-12">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.BODY_MASS_COMPOSITION' | translate }}</b>
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.LEAN_AREA' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.areaMagra | medidas:'C'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.FAT_AREA' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.areaGrasa | medidas:'C'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.INDEX_WAIST_HIP' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.indiceCinturaCadera | medidas:'c'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.INDEX_WAIST_SIZE' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.indiceCinturaTalla | medidas:'c'}}
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.SESTRI_INDEX' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.indiceSestri | medidas:'M' }}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.SIRI' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.siri | medidas:'P'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.CIRC_WAIST' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.circunsferenciaCintura | medidas:'P'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.FAT_MASS' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.valorAbsoluto | medidas:'K' }}
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.FAT_FREE_MASS' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.masaLibreGrasa | medidas:'K' }}
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.IDEAL_WEIGHT' | translate }}</b>
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.HAMWI' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.hamwi | medidas:'K' }}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.WEST' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.west | medidas:'K' }}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.BROCA' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.broca | medidas:'K'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.IMC' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.derivadaIMC | medidas:'K' }}
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-4">
+                <b>{{ 'PAGES.ANSWERS.ADULT_ANTHROPEDIA.MLG_WEIGHT' | translate }}</b> &nbsp;&nbsp; {{antropediaAdultoRes.pesoDeseableMLG | medidas:'K'}}
+            </div>
+        </div>
+        <br>
+        <div class="form-row mt-2">
+            <div class="col-md-6">
+                <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;{{ 'BUTTON.BACK' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

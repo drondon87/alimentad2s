@@ -4,6 +4,7 @@ import { PesoAjustadoComponent } from './peso-ajustado.component';
 import { PesoAjustadoRoutingModule } from './peso-ajustado-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   declarations: [PesoAjustadoComponent],
@@ -11,7 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     ReactiveFormsModule,
     PesoAjustadoRoutingModule,
-    TranslateModule
+    TranslateModule,
+    PipesModule
   ]
 })
 export class PesoAjustadoModule { }
