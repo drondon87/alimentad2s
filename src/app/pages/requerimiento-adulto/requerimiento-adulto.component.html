@@ -4,11 +4,11 @@
     </div>
 </div>
 <hr>
-<form [formGroup]="reqAdultoForm">
+<form [formGroup]="reqAdultoForm" (ngSubmit)="calcularRequerimientoAdulto()" *ngIf="!respuesta">
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
-            <select class="custom-select" class="form-control" id="sexo" formControlName="sexo">
+            <select class="custom-select" id="sexo" formControlName="sexo">
             <option></option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MALE_TITLE' | translate }}</option>
             <option value="F">{{ 'PAGES.MEASURES.COMBO.FEMALE_TITLE' | translate }}</option>
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.ACTIVITY_FACTOR' | translate }}</label>
-            <select class="custom-select" class="form-control" formControlName="factoresActividad">
+            <select class="custom-select" formControlName="factoresActividad">
             <option selected></option>
             <option value="L">{{ 'PAGES.MEASURES.COMBO.MILD' | translate }}</option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MODERATE' | translate }}</option>
@@ -40,8 +40,8 @@
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.PHYSICAL_ACTIVITY_LEVEL' | translate }}</label>
-            <select class="custom-select" class="form-control" id="nivelActividadFisica" formControlName="nivelActividadFisica">
-            <option selected></option>
+            <select class="custom-select" id="nivelActividadFisica" formControlName="nivelActividadFisica">
+            <option selected>-----</option>
             <option value="L">{{ 'PAGES.MEASURES.COMBO.LIGHT' | translate }}</option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MODERATE' | translate }}</option>
             <option value="I">{{ 'PAGES.MEASURES.COMBO.INTENSE' | translate }}</option>
@@ -63,8 +63,80 @@
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.PHYSICAL_ACTIVITY_METRIC' | translate }}</label>
-            <input type="number" class="form-control" id="met" formControlName="met">
+            <select class="custom-select" formControlName="met" class="form-control">
+                <option selected></option>
+                <option value="{{met.codigo}}" *ngFor="let met of mets">{{met.descripcion}}</option>
+            </select>
         </div>
     </div>
     <button type="submit" [disabled]="reqAdultoForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
 </form>
+<div *ngIf="respuesta">
+    <div *ngIf="requerimientoAdultoRes">
+        <div class="form-row">
+            <div class="col-md-12">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.TOTAL_CALORIC_REQUIREMENT' | translate }}</b>
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-6">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.TRADITIONAL_METHOD' | translate }}</b>
+            </div>
+            <div class="col-md-6">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.DIRECT_METHOD' | translate }}</b>
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.RCB' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.mtRCB}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.ADE' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.mtADE}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.RCT' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.mtRCT}}
+            </div>
+            <div class="col-md-2">
+                &nbsp;&nbsp; {{requerimientoAdultoRes.metodoDirecto}}
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-4">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.SIMPLIFIED_METHOD' | translate }}</b>
+            </div>
+            <div class="col-md-8">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.CUNNINGHAM_METHOD' | translate }}</b>
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.TMB' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.tasaMetabolicaBasal}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.RCT' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.requerimientoCaloricoTotal}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.TMR' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.tasaMetabolicaReposo}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.GEAF' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.gastoEnergeticoActividadFisica}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.ADE' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.accionDinamicaEspecifica}}
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.ADULT_REQUIREMENT.GCT' | translate }}</b> &nbsp;&nbsp; {{requerimientoAdultoRes.gastoCaloricaTotal}}
+            </div>
+        </div>
+        <br>
+        <div class="form-row mt-2">
+            <div class="col-md-6">
+                <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;{{ 'BUTTON.BACK' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,8 @@ import { PesoAjustadoReq } from 'src/app/models/PesoAjustadoReq.model';
 import { PesoAjustadoRes } from '../../models/PesoAjustadoRes.model';
 import { AntropediaAdultoReq } from '../../models/AntropediaAdultoReq.model';
 import { AntropediaAdultoRes } from '../../models/AntropediaAdultoRes.model';
+import { RequerimientoAdultoReq } from 'src/app/models/RequerimientoAdultoReq.model';
+import { RequerimientoAdultoRes } from 'src/app/models/RequerimientoAdultoRes.model';
 
 export const pesoAjustado = createAction('[Formulas] Peso Ajustado', props<{pesoAjustadoReq: PesoAjustadoReq}>());
 export const pesoAjustadoSuccess = createAction('[Formulas] Peso Ajustado Success', props<{pesoAjustadoRes: PesoAjustadoRes}>());
@@ -13,3 +15,8 @@ export const antropediaAdulto = createAction('[Formulas] Antropedia Adulto', pro
 export const antropediaAdultoSuccess = createAction('[Formulas] Antropedia Adulto Success', props<{antropediaAdultoRes: AntropediaAdultoRes}>());
 export const antropediaAdultoError = createAction('[Formulas] Antropedia Adulto Error', props<{payload: any}>());
 export const antropediaAdultoReset = createAction('[Formulas] Antropedia Adulto Reset');
+
+export const requerimientoAdulto = createAction('[Formulas] Requerimiento Adulto', props<{requerimientoAdultoReq: RequerimientoAdultoReq}>());
+export const requerimientoAdultoSuccess = createAction('[Formulas] Requerimiento Adulto Success', props<{requerimientoAdultoRes: RequerimientoAdultoRes}>());
+export const requerimientoAdultoError = createAction('[Formulas] Requerimiento Adulto Error', props<{payload: any}>());
+export const requerimientoAdultoReset = createAction('[Formulas] Requerimiento Adulto Reset');

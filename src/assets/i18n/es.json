@@ -40,6 +40,7 @@
             "ACTUAL_WEIGHT_C_METHOD": "Peso Actual (método cunningham):",
             "PHYSICAL_ACTIVITY_TIME": "Tiempo Actividad Física:",
             "PHYSICAL_ACTIVITY_METRIC": "Métrica Actividad Física:",
+            "PHYSICAL_ACTIVITY_LEVEL_COMBO": "Nivel Actividad Física",
             "COMBO": {
                 "SEX_TITLE": "Sexo",
                 "MALE_TITLE": "Masculino",
@@ -73,6 +74,20 @@
                 "BROCA": "Broca:",
                 "IMC": "Derivadas del IMC",
                 "MLG_WEIGHT": "Peso deseable función MLG:"
+            },
+            "ADULT_REQUIREMENT": {
+                "TOTAL_CALORIC_REQUIREMENT": "Requerimiento Calórico Total",
+                "TRADITIONAL_METHOD": "Método Tradicional",
+                "DIRECT_METHOD": "Método Directo",
+                "RCB": "RCB",
+                "ADE": "ADE",
+                "RCT": "RCT",
+                "SIMPLIFIED_METHOD": "Método Simplificado (OMS)",
+                "CUNNINGHAM_METHOD": "Método Cunningham",
+                "TMB": "TMB",
+                "TMR": "TMR",
+                "GEAF": "GEAF",
+                "GCT": "GCT"
             }
         }
     },

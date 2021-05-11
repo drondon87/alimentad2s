@@ -4,7 +4,6 @@ import { catchError, map, mergeMap } from "rxjs/operators";
 import { FormulasService } from "src/app/services/formulas.service";
 import * as formulasActions from '../actions/';
 import { of } from 'rxjs';
-import { AntropediaAdultoRes } from '../../models/AntropediaAdultoRes.model';
 
 @Injectable()
 export class FormulasEffects {
@@ -32,6 +31,18 @@ export class FormulasEffects {
                    map(antropediaAdultoRes => formulasActions.antropediaAdultoSuccess({antropediaAdultoRes})),
                    catchError(payload => of(formulasActions.antropediaAdultoError({payload})))
                ) 
+            )
+        )
+    );
+
+    requerimientoAdulto$ = createEffect(
+        () => this.accions$.pipe(
+            ofType(formulasActions.requerimientoAdulto),
+            mergeMap(
+                (action) => this._formulaServices.getRequerimientoAdultos(action.requerimientoAdultoReq).pipe(
+                    map(requerimientoAdultoRes => formulasActions.requerimientoAdultoSuccess({requerimientoAdultoRes})),
+                    catchError(payload => of(formulasActions.requerimientoAdultoError({payload})))
+                )
             )
         )
     );
