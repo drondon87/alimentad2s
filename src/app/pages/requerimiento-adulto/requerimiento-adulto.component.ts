@@ -43,6 +43,26 @@ export class RequerimientoAdultoComponent implements OnInit, OnDestroy {
     
   }
 
+  get sexo(){ return this.reqAdultoForm.get('sexo'); }
+
+  get edad(){ return this.reqAdultoForm.get('edad'); }
+
+  get pesoRecomendado(){ return this.reqAdultoForm.get('pesoRecomendado'); }
+
+  get factoresActividad(){ return this.reqAdultoForm.get('factoresActividad'); }
+
+  get kcal(){ return this.reqAdultoForm.get('kcal'); }
+
+  get nivelActividadFisica(){ return this.reqAdultoForm.get('nivelActividadFisica'); }
+
+  get masaGrasaKg(){ return this.reqAdultoForm.get('masaGrasaKg'); }
+
+  get pesoActual(){ return this.reqAdultoForm.get('pesoActual'); }
+
+  get tiempoActividadFisica(){ return this.reqAdultoForm.get('tiempoActividadFisica'); }
+
+  get met(){ return this.reqAdultoForm.get('met'); }
+
   initCampos(){
     this.reqAdultoForm = this.fb.group({
       sexo: ['', Validators.required],

@@ -8,65 +8,75 @@
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
-            <select class="custom-select" id="sexo" formControlName="sexo">
+            <select [class.is-invalid]="sexo.invalid && sexo.touched" class="custom-select" id="sexo" formControlName="sexo">
             <option></option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MALE_TITLE' | translate }}</option>
             <option value="F">{{ 'PAGES.MEASURES.COMBO.FEMALE_TITLE' | translate }}</option>
             </select>
+            <small class="text-danger " *ngIf="sexo.invalid && sexo.touched ">{{ 'VALIDATIONS.MEASURES.SEX' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
-            <input type="number" class="form-control" id="edad" formControlName="edad">
+            <input [class.is-invalid]="edad.invalid && edad.touched" type="number" class="form-control" id="edad" formControlName="edad">
+            <small class="text-danger " *ngIf="edad.invalid && edad.touched ">{{ 'VALIDATIONS.MEASURES.AGE' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.RECOMMENDED_WEIGHT' | translate }}</label>
-            <input type="number" class="form-control" id="pesoRecomendado" formControlName="pesoRecomendado">
+            <input [class.is-invalid]="pesoRecomendado.invalid && pesoRecomendado.touched" type="number" class="form-control" id="pesoRecomendado" formControlName="pesoRecomendado">
+            <small class="text-danger " *ngIf="pesoRecomendado.invalid && pesoRecomendado.touched ">{{ 'VALIDATIONS.MEASURES.RECOMMENDED_WEIGHT' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.ACTIVITY_FACTOR' | translate }}</label>
-            <select class="custom-select" formControlName="factoresActividad">
+            <select [class.is-invalid]="factoresActividad.invalid && factoresActividad.touched" class="custom-select" formControlName="factoresActividad">
             <option selected></option>
             <option value="L">{{ 'PAGES.MEASURES.COMBO.MILD' | translate }}</option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MODERATE' | translate }}</option>
             <option value="F">{{ 'PAGES.MEASURES.COMBO.STRONG' | translate }}</option>
             <option value="MF">{{ 'PAGES.MEASURES.COMBO.VERY_STRONG' | translate }}</option>
           </select>
+            <small class="text-danger " *ngIf="factoresActividad.invalid && factoresActividad.touched ">{{ 'VALIDATIONS.MEASURES.ACTIVITY_FACTOR' | translate }}</small>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.DIRECT_METHOD' | translate }}</label>
-            <input type="number" class="form-control" id="kcal" formControlName="kcal">
+            <input [class.is-invalid]="kcal.invalid && kcal.touched" type="number" class="form-control" id="kcal" formControlName="kcal">
+            <small class="text-danger " *ngIf="kcal.invalid && kcal.touched ">{{ 'VALIDATIONS.MEASURES.DIRECT_METHOD' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.PHYSICAL_ACTIVITY_LEVEL' | translate }}</label>
-            <select class="custom-select" id="nivelActividadFisica" formControlName="nivelActividadFisica">
+            <select [class.is-invalid]="nivelActividadFisica.invalid && nivelActividadFisica.touched" class="custom-select" id="nivelActividadFisica" formControlName="nivelActividadFisica">
             <option selected>-----</option>
             <option value="L">{{ 'PAGES.MEASURES.COMBO.LIGHT' | translate }}</option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MODERATE' | translate }}</option>
             <option value="I">{{ 'PAGES.MEASURES.COMBO.INTENSE' | translate }}</option>
         </select>
+            <small class="text-danger " *ngIf="nivelActividadFisica.invalid && nivelActividadFisica.touched ">{{ 'VALIDATIONS.MEASURES.PHYSICAL_ACTIVITY_LEVEL' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.FAT_FREE_DOUGH' | translate }}</label>
-            <input type="number" class="form-control" id="masaGrasaKg" formControlName="masaGrasaKg">
+            <input [class.is-invalid]="masaGrasaKg.invalid && masaGrasaKg.touched" type="number" class="form-control" id="masaGrasaKg" formControlName="masaGrasaKg">
+            <small class="text-danger " *ngIf="masaGrasaKg.invalid && masaGrasaKg.touched ">{{ 'VALIDATIONS.MEASURES.FAT_FREE_DOUGH' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.ACTUAL_WEIGHT_C_METHOD' | translate }}</label>
-            <input type="number" class="form-control" id="pesoActual" formControlName="pesoActual">
+            <input [class.is-invalid]="pesoActual.invalid && pesoActual.touched" type="number" class="form-control" id="pesoActual" formControlName="pesoActual">
+            <small class="text-danger " *ngIf="pesoActual.invalid && pesoActual.touched ">{{ 'VALIDATIONS.MEASURES.ACTUAL_WEIGHT_C_METHOD' | translate }}</small>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.PHYSICAL_ACTIVITY_TIME' | translate }}</label>
-            <input type="number" class="form-control" id="tiempoActividadFisica" formControlName="tiempoActividadFisica">
+            <input [class.is-invalid]="tiempoActividadFisica.invalid && tiempoActividadFisica.touched" type="number" class="form-control" id="tiempoActividadFisica" formControlName="tiempoActividadFisica">
+            <small class="text-danger " *ngIf="tiempoActividadFisica.invalid && tiempoActividadFisica.touched ">{{ 'VALIDATIONS.MEASURES.PHYSICAL_ACTIVITY_TIME' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.PHYSICAL_ACTIVITY_METRIC' | translate }}</label>
-            <select class="custom-select" formControlName="met" class="form-control">
+            <select [class.is-invalid]="met.invalid && met.touched" class="custom-select" formControlName="met" class="form-control">
                 <option selected></option>
                 <option value="{{met.codigo}}" *ngFor="let met of mets">{{met.descripcion}}</option>
             </select>
+            <small class="text-danger " *ngIf="met.invalid && met.touched ">{{ 'VALIDATIONS.MEASURES.PHYSICAL_ACTIVITY_METRIC' | translate }}</small>
         </div>
     </div>
     <button type="submit" [disabled]="reqAdultoForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>

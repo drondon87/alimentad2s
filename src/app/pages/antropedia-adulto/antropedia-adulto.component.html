@@ -8,23 +8,27 @@
     <div class="form-row">
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
-            <select class="custom-select" class="form-control" id="sexo" formControlName="sexo">
+            <select [class.is-invalid]="sexo.invalid && sexo.touched" class="custom-select" class="form-control" id="sexo" formControlName="sexo">
             <option></option>
             <option value="M">{{ 'PAGES.MEASURES.COMBO.MALE_TITLE' | translate }}</option>
             <option value="F">{{ 'PAGES.MEASURES.COMBO.FEMALE_TITLE' | translate }}</option>
           </select>
+            <small class="text-danger " *ngIf="sexo.invalid && sexo.touched ">{{ 'VALIDATIONS.MEASURES.SEX' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
-            <input type="number" class="form-control" id="edad" formControlName="edad">
+            <input [class.is-invalid]="edad.invalid && edad.touched" type="number" class="form-control" id="edad" formControlName="edad">
+            <small class="text-danger " *ngIf="edad.invalid && edad.touched ">{{ 'VALIDATIONS.MEASURES.AGE' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.HEIGHT' | translate }}</label>
-            <input type="number" class="form-control" id="estatura" formControlName="estatura">
+            <input [class.is-invalid]="estatura.invalid && estatura.touched" type="number" class="form-control" id="estatura" formControlName="estatura">
+            <small class="text-danger " *ngIf="estatura.invalid && estatura.touched ">{{ 'VALIDATIONS.MEASURES.HEIGHT' | translate }}</small>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.WEIGHT' | translate }}</label>
-            <input type="number" class="form-control" id="peso" formControlName="peso">
+            <input [class.is-invalid]="peso.invalid && peso.touched" type="number" class="form-control" id="peso" formControlName="peso">
+            <small class="text-danger " *ngIf="peso.invalid && peso.touched ">{{ 'VALIDATIONS.MEASURES.WEIGHT' | translate }}</small>
         </div>
     </div>
     <div class="form-row">

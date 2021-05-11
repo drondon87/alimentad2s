@@ -103,7 +103,17 @@
         },
         "MEASURES": {
             "WEIGHT": "Weight is required",
-            "RECOMMENDED_WEIGHT": "Recommended is required"
+            "RECOMMENDED_WEIGHT": "Recommended is required",
+            "SEX": "Sex is required",
+            "AGE": "Age is required",
+            "HEIGHT": "Height is required",
+            "ACTIVITY_FACTOR": "Activity Factor is required",
+            "DIRECT_METHOD": "Kcal (direct method) is required",
+            "PHYSICAL_ACTIVITY_LEVEL": "Physical Activity Level is required",
+            "FAT_FREE_DOUGH": "Fat Free Dough is required",
+            "ACTUAL_WEIGHT_C_METHOD": "Actual Weight is required",
+            "PHYSICAL_ACTIVITY_TIME": "Physical Activity Time is required",
+            "PHYSICAL_ACTIVITY_METRIC": "Physical Activity Metric is required"
         }
     }
 }

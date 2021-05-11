@@ -103,7 +103,17 @@
         },
         "MEASURES": {
             "WEIGHT": "Peso es obligatorio",
-            "RECOMMENDED_WEIGHT": "Peso Recomendado es obligatorio"
+            "RECOMMENDED_WEIGHT": "Peso Recomendado es obligatorio",
+            "SEX": "Sexo es obligatorio",
+            "AGE": "Edad es obligatoria",
+            "HEIGHT": "Estatura es obligatoria",
+            "ACTIVITY_FACTOR": "Factor Actividad es obligatoria",
+            "DIRECT_METHOD": "Kcal (método directo) es obligatorio",
+            "PHYSICAL_ACTIVITY_LEVEL": "Nivel Actividad Física es obligatoria",
+            "FAT_FREE_DOUGH": "Masa Libre de Grasa es obligatoria",
+            "ACTUAL_WEIGHT_C_METHOD": "Peso Actual es obligatoria",
+            "PHYSICAL_ACTIVITY_TIME": "Tiempo Actividad Física es obligatoria",
+            "PHYSICAL_ACTIVITY_METRIC": "Métrica Actividad Física es obligatoria"
         }
     }
 }

@@ -25,6 +25,14 @@ export class AntropediaAdultoComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder,
               private store: Store<AppState>) { }
 
+  get sexo(){ return this.antropediaForm.get('sexo'); }
+
+  get edad(){ return this.antropediaForm.get('edad'); }
+
+  get estatura(){ return this.antropediaForm.get('estatura'); }
+
+  get peso(){ return this.antropediaForm.get('peso'); }
+
   ngOnInit() {
     this.initCampos();
   }
