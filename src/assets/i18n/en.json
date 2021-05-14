@@ -41,6 +41,17 @@
             "PHYSICAL_ACTIVITY_TIME": "Physical Activity Time:",
             "PHYSICAL_ACTIVITY_METRIC": "Physical Activity Metric:",
             "PHYSICAL_ACTIVITY_LEVEL_COMBO": "Physical Activity Level",
+            "PROTEIN_GRAMS": "Grams of protein",
+            "TOTAL_CALORIC_REQUIREMENT": "Total Caloric Requirement",
+            "TOTAL_FAT": "% Total Fat",
+            "SATURATED_FAT": "% Saturated Fats",
+            "POLYUNSATURATED_FAT": "% Polyunsaturated Fats",
+            "MONOUNSATURATED_FAT": "% Monounsaturated fats",
+            "COMPLEX_CARBOHYDRATES": "% Complex Carbohydrates",
+            "SIMPLE_CARBOHYDRATES": "% Simple Carbs",
+            "DIETARY_FIBER": "Dietary fiber",
+            "SODIUM": "Sodium",
+            "CHOLESTEROL": "Cholesterol",
             "COMBO": {
                 "SEX_TITLE": "Sex",
                 "MALE_TITLE": "Male",
@@ -88,13 +99,34 @@
                 "TMR": "TMR",
                 "GEAF": "GEAF",
                 "GCT": "GCT"
+            },
+            "DIETARY_FORMULA": {
+                "NUTRIENT": "Nutrient",
+                "PERCENT": "%",
+                "KCAL": "Kcal",
+                "GRAMS": "Grams",
+                "PROTEIN": "Protein (",
+                "GRAMS_KG": "g/kg)",
+                "TOTAL_FATS": "Total Fats",
+                "SATURATED": "Saturated",
+                "POLYUNSATURATED": "Polyunsaturated",
+                "MONOUNSATURATED": "Monounsaturated",
+                "COMPLEX_CARBOHYDRATES": "Complex Carbohydrates",
+                "SIMPLE_CARBOHYDRATES": "Simple Carbs",
+                "DIETARY_FIBER": "Dietary fiber",
+                "SODIUM": "Sodium",
+                "CHOLESTEROL": "Cholesterol",
+                "WATER_REQUIREMENT_KG": "Water Requirement (base Kg Weight)",
+                "WATER_REQUIREMENT_KCAL": "Water Requirement (Kcal base)",
+                "WATER_GLASSES": "Amount of Glasses of Water per Day"
             }
         }
     },
     "TITLES": {
         "ADJUSTED_WEIGHT": "Adjusted Weight Calculation",
         "ADULT_ANTHROPEDIA": "Adult Anthropedia Calculation",
-        "ADULT_REQUIREMENT": "Adult Requirement Calculation"
+        "ADULT_REQUIREMENT": "Adult Requirement Calculation",
+        "DIETARY_FORMULA": "Dietary Formula"
     },
     "VALIDATIONS": {
         "AUTH": {

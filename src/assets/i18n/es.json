@@ -41,6 +41,17 @@
             "PHYSICAL_ACTIVITY_TIME": "Tiempo Actividad Física:",
             "PHYSICAL_ACTIVITY_METRIC": "Métrica Actividad Física:",
             "PHYSICAL_ACTIVITY_LEVEL_COMBO": "Nivel Actividad Física",
+            "PROTEIN_GRAMS": "Gramos de proteína",
+            "TOTAL_CALORIC_REQUIREMENT": "Requerimiento Calorico Total",
+            "TOTAL_FAT": "% Grasa Total",
+            "SATURATED_FAT": "% Grasas Saturadas",
+            "POLYUNSATURATED_FAT": "% Grasas Polisaturadas",
+            "MONOUNSATURATED_FAT": "% Grasas Monoinsaturadas",
+            "COMPLEX_CARBOHYDRATES": "% Carbohidratos Complejos",
+            "SIMPLE_CARBOHYDRATES": "% Carbohidratos Simples",
+            "DIETARY_FIBER": "Fibra Dietética",
+            "SODIUM": "Sodio",
+            "CHOLESTEROL": "Colesterol",
             "COMBO": {
                 "SEX_TITLE": "Sexo",
                 "MALE_TITLE": "Masculino",
@@ -88,13 +99,34 @@
                 "TMR": "TMR",
                 "GEAF": "GEAF",
                 "GCT": "GCT"
+            },
+            "DIETARY_FORMULA": {
+                "NUTRIENT": "Nutriente",
+                "PERCENT": "%",
+                "KCAL": "Kcal",
+                "GRAMS": "Gramos",
+                "PROTEIN": "Proteínas (",
+                "GRAMS_KG": "g/kg)",
+                "TOTAL_FATS": "Grasas Totales",
+                "SATURATED": "Saturadas",
+                "POLYUNSATURATED": "Poliinsaturadas",
+                "MONOUNSATURATED": "Monoinsaturadas",
+                "COMPLEX_CARBOHYDRATES": "Carbohidratos Complejos",
+                "SIMPLE_CARBOHYDRATES": "Carbohidratos Simples",
+                "DIETARY_FIBER": "Fibra Dietética",
+                "SODIUM": "Sodio",
+                "CHOLESTEROL": "Colesterol",
+                "WATER_REQUIREMENT_KG": "Requerimiento Hídrico (base Kg Peso)",
+                "WATER_REQUIREMENT_KCAL": "Requerimiento Hídrico (base Kcal)",
+                "WATER_GLASSES": "Cantidad de Vasos de Agua al Día"
             }
         }
     },
     "TITLES": {
         "ADJUSTED_WEIGHT": "Cálculo del Peso Ajustado",
         "ADULT_ANTHROPEDIA": "Cálculo de Antropédia Adulto",
-        "ADULT_REQUIREMENT": "Cálculo del Requerimiento Adulto"
+        "ADULT_REQUIREMENT": "Cálculo del Requerimiento Adulto",
+        "DIETARY_FORMULA": "Fórmula Dietética"
     },
     "VALIDATIONS": {
         "AUTH": {

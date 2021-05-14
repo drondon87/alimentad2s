@@ -10,6 +10,8 @@ import { AntropediaAdultoRes } from '../models/AntropediaAdultoRes.model';
 import { Met } from '../models/Met.model';
 import { RequerimientoAdultoReq } from '../models/RequerimientoAdultoReq.model';
 import { RequerimientoAdultoRes } from '../models/RequerimientoAdultoRes.model';
+import { FormulaDieteticaReq } from '../models/FormulaDieteticaReq.model';
+import { FormulaDieteticaRes } from '../models/FormulaDieteticaRes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,7 @@ export class FormulasService {
   private ANTROPEDIA_ADULTO = this.FORMULA + '/antropometriaAdulto';
   private METS = this.FORMULA + '/mets';
   private REQUERIMIENTO_ADULTO = this.FORMULA + '/requerimientoAdulto';
+  private FORMULA_DIETETICA = this.FORMULA + '/formulaDietetica';
   
   constructor(private _httpClient: HttpClient) { }
 
@@ -54,6 +57,15 @@ export class FormulasService {
 
   public getRequerimientoAdultos(requerimientoAdultoReq: RequerimientoAdultoReq) {
     return this._httpClient.post<RequerimientoAdultoRes>(this.REQUERIMIENTO_ADULTO, requerimientoAdultoReq)
+    .pipe(
+      catchError(err => {
+        return throwError(err);
+      })
+    );
+  }
+
+  public getFormulaDietetica(formulaDieteticaReq: FormulaDieteticaReq) {
+    return this._httpClient.post<FormulaDieteticaRes>(this.FORMULA_DIETETICA, formulaDieteticaReq)
     .pipe(
       catchError(err => {
         return throwError(err);

@@ -47,4 +47,16 @@ export class FormulasEffects {
         )
     );
 
+    formulaDietetica$ = createEffect(
+        () => this.accions$.pipe(
+            ofType(formulasActions.formulaDietetica),
+            mergeMap(
+                (action) => this._formulaServices.getFormulaDietetica(action.formulaDieteticaReq).pipe(
+                    map(formulaDieteticaRes => formulasActions.formulaDieteticaSuccess({formulaDieteticaRes})),
+                    catchError(payload => of(formulasActions.formulaDieteticaError({payload})))
+                )
+            )  
+        )
+    );
+
 }

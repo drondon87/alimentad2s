@@ -1,6 +1,233 @@
 <div class="row">
     <div class="col-12">
-        <h4>Cálculo de la Fórmula Dietética</h4>
+        <h4>{{ 'TITLES.DIETARY_FORMULA' | translate }}</h4>
     </div>
 </div>
 <hr>
+<form [formGroup]="formulaDForm" (ngSubmit)="calcularFormulaDietetica()" *ngIf="!respuesta">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.PROTEIN_GRAMS' | translate }}</label>
+            <input type="number" formControlName="gramo" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.RECOMMENDED_WEIGHT' | translate }}</label>
+            <input type="number" formControlName="pesoRecomendado" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.TOTAL_CALORIC_REQUIREMENT' | translate }}</label>
+            <input type="number" formControlName="rct" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.TOTAL_FAT' | translate }}</label>
+            <input type="number" formControlName="porcentajeGrasasTotales" class="form-control" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.SATURATED_FAT' | translate }}</label>
+            <input type="number" formControlName="porcentajeGrasasSaturadas" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.POLYUNSATURATED_FAT' | translate }}</label>
+            <input type="number" formControlName="porcentajeGrasasPoliinsaturadas" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.MONOUNSATURATED_FAT' | translate }}</label>
+            <input type="number" formControlName="porcentajeGrasasMonoInsaturadas" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.COMPLEX_CARBOHYDRATES' | translate }}</label>
+            <input type="number" formControlName="porcentajeCarbComplejos" class="form-control" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.SIMPLE_CARBOHYDRATES' | translate }}</label>
+            <input type="number" formControlName="porcentajeCarbSimples" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.DIETARY_FIBER' | translate }}</label>
+            <input type="number" formControlName="fibraDietetica" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.SODIUM' | translate }}</label>
+            <input type="number" formControlName="sodio" class="form-control" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.MEASURES.CHOLESTEROL' | translate }}</label>
+            <input type="number" formControlName="colesterol" class="form-control" required>
+        </div>
+    </div>
+    <button type="submit" [disabled]="formulaDForm.invalid" class="btn btn-primary"><i class="fa fa-calculator"></i>{{ 'BUTTON.CALCULATE' | translate }}</button>
+</form>
+<div *ngIf="respuesta">
+    <div *ngIf="formulaDieteticaRes">
+        <div class="form-row">
+            <div class="col-md-6">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.NUTRIENT' | translate }}</b>
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.PERCENT' | translate }}</b>
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.KCAL' | translate }}</b>
+            </div>
+            <div class="col-md-2">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.GRAMS' | translate }}</b>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.PROTEIN' | translate }}</b> &nbsp;&nbsp; {{formulaDieteticaRes.gramo}} <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.GRAMS_KG' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajeProteinas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalProteinas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosProteinas}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.TOTAL_FATS' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajeGrasasTotales}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalGrasasTotales}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosGrasasTotales}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ 'PAGES.ANSWERS.DIETARY_FORMULA.SATURATED' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajeGrasasSaturadas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalGrasasSaturadas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosGrasasSaturadas}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ 'PAGES.ANSWERS.DIETARY_FORMULA.POLYUNSATURATED' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajePoliinsaturadas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalGrasasPoliinsaturadas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosGrasasPoliinsaturadas}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ 'PAGES.ANSWERS.DIETARY_FORMULA.MONOUNSATURATED' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajeMonoinsaturadas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalGrasasMonoinsaturadas}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosGrasasMonoinsaturadas}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.COMPLEX_CARBOHYDRATES' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajeCarbohidratosComplejos}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalGrasasCarbohidratosComplejos}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosGrasasCarbohidratosComplejos}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.SIMPLE_CARBOHYDRATES' | translate }}</b>
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.porcentajeCarbohidratosSimples}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.kcalGrasasCarbohidratosSimples}}
+            </div>
+            <div class="col-md-2 border border-dark font-weight-bold text-center">
+                {{formulaDieteticaRes.gramosGrasasCarbohidratosSimples}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.DIETARY_FIBER' | translate }}</b>
+            </div>
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{formulaDieteticaRes.fibraDietetica}}</b>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.SODIUM' | translate }}</b>
+            </div>
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{formulaDieteticaRes.sodio}}</b>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.CHOLESTEROL' | translate }}</b>
+            </div>
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{formulaDieteticaRes.colesterol}}</b>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.WATER_REQUIREMENT_KG' | translate }}</b>
+            </div>
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{formulaDieteticaRes.requerimientoHidricoPeso}}</b>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.WATER_REQUIREMENT_KCAL' | translate }}</b>
+            </div>
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{formulaDieteticaRes.requerimientoHidricoKcal}}</b>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{ 'PAGES.ANSWERS.DIETARY_FORMULA.WATER_GLASSES' | translate }}</b>
+            </div>
+            <div class="col-md-6 border border-dark font-weight-bold text-center">
+                <b>{{formulaDieteticaRes.cantidadVasosAgua}}</b>
+            </div>
+        </div>
+        <br>
+        <div class="form-row mt-2">
+            <div class="col-md-6">
+                <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;{{ 'BUTTON.BACK' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>
