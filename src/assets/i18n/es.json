@@ -7,7 +7,8 @@
         "LOGIN": "Login",
         "WAIT": "Espere ...",
         "CALCULATE": "Calcular",
-        "BACK": "Volver"
+        "BACK": "Volver",
+        "PRINT": "Imprimir"
     },
     "MENU": {
         "DASHBOARD": "Dashboard",
@@ -15,7 +16,8 @@
         "ADULT_ANTHROPEDIA": "Antropedia Adulto",
         "ADULT_REQUIREMENT": "Requerimiento Adulto",
         "DIETARY_FORMULA": "Fórmula Dietética",
-        "LOGOUT": "Cerrar sesión"
+        "LOGOUT": "Cerrar sesión",
+        "PERSONS": "Personas"
     },
     "PAGES": {
         "MEASURES": {
@@ -126,7 +128,8 @@
         "ADJUSTED_WEIGHT": "Cálculo del Peso Ajustado",
         "ADULT_ANTHROPEDIA": "Cálculo de Antropédia Adulto",
         "ADULT_REQUIREMENT": "Cálculo del Requerimiento Adulto",
-        "DIETARY_FORMULA": "Fórmula Dietética"
+        "DIETARY_FORMULA": "Fórmula Dietética",
+        "PERSONS": "Personas"
     },
     "VALIDATIONS": {
         "AUTH": {
@@ -145,7 +148,18 @@
             "FAT_FREE_DOUGH": "Masa Libre de Grasa es obligatoria",
             "ACTUAL_WEIGHT_C_METHOD": "Peso Actual es obligatoria",
             "PHYSICAL_ACTIVITY_TIME": "Tiempo Actividad Física es obligatoria",
-            "PHYSICAL_ACTIVITY_METRIC": "Métrica Actividad Física es obligatoria"
+            "PHYSICAL_ACTIVITY_METRIC": "Métrica Actividad Física es obligatoria",
+            "GRAMS": "Gramos son obligatorios",
+            "RCT": "RCT es obligatorio",
+            "TOTAL_FATS": "% Grasas Totales es obligatorio",
+            "SATURATED_FAT": "% Grasas Saturadas es obligatorio",
+            "POLYUNSATURATED_FAT": "% Grasas Polisaturadas es obligatorio",
+            "MONOUNSATURATED_FAT": "% Grasas Monoinsaturadas es obligatorio",
+            "COMPLEX_CARBOHYDRATES": "% Carbohidratos Complejos es obligatorio",
+            "SIMPLE_CARBOHYDRATES": "% Carbohidratos Simples es obligatorio",
+            "DIETARY_FIBER": "Fibra Dietética es obligatorio",
+            "SODIUM": "Sodio es obligatorio",
+            "CHOLESTEROL": "Colesteroles obligatorio"
         }
     }
 }

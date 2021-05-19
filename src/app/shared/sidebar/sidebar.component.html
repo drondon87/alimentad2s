@@ -55,6 +55,13 @@
         </li>
 
         <li class="nav-item">
+            <a (click)="goTo('personas')" class="nav-link cursor-pointer">
+                <i class="menu-icon fa fa-clipboard-list"></i>
+                <span class="menu-title">{{ 'MENU.PERSONS' | translate }}</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a (click)="cerrarSesion()" class="nav-link cursor-pointer">
                 <i class="menu-icon fa fa-sign-out-alt"></i>
                 <span class="menu-title">{{ 'MENU.LOGOUT' | translate }}</span>

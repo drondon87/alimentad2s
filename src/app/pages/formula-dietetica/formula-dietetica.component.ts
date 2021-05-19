@@ -6,7 +6,9 @@ import { AppState } from 'src/app/store/app.reducers';
 import Swal from 'sweetalert2';
 import { FormulaDieteticaReq } from '../../models/FormulaDieteticaReq.model';
 import { FormulaDieteticaRes } from '../../models/FormulaDieteticaRes.model';
-import { formulaDietetica } from '../../store/actions/formulas.actions';
+import { formulaDietetica } from 'src/app/store/actions';
+import * as jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-formula-dietetica',
@@ -25,6 +27,30 @@ export class FormulaDieteticaComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder,
               private store: Store<AppState>) { }
 
+  get gramo(){ return this.formulaDForm.get('gramo'); }
+
+  get pesoRecomendado(){ return this.formulaDForm.get('pesoRecomendado'); }
+
+  get rct(){ return this.formulaDForm.get('rct'); }
+
+  get porcentajeGrasasTotales(){ return this.formulaDForm.get('porcentajeGrasasTotales'); }
+
+  get porcentajeGrasasSaturadas(){ return this.formulaDForm.get('porcentajeGrasasSaturadas'); }
+
+  get porcentajeGrasasPoliinsaturadas(){ return this.formulaDForm.get('porcentajeGrasasPoliinsaturadas'); }
+
+  get porcentajeGrasasMonoInsaturadas(){ return this.formulaDForm.get('porcentajeGrasasMonoInsaturadas'); }
+
+  get porcentajeCarbComplejos(){ return this.formulaDForm.get('porcentajeCarbComplejos'); }
+
+  get porcentajeCarbSimples(){ return this.formulaDForm.get('porcentajeCarbSimples'); }
+
+  get fibraDietetica(){ return this.formulaDForm.get('fibraDietetica'); }
+
+  get sodio(){ return this.formulaDForm.get('sodio'); }
+
+  get colesterol(){ return this.formulaDForm.get('colesterol'); }
+  
   ngOnInit() {
     this.initCampos();
   }
@@ -98,6 +124,20 @@ export class FormulaDieteticaComponent implements OnInit, OnDestroy {
 
   volver(){
     this.initCampos();
+  }
+
+  imprimirPDF() {
+
+    let source: any = document.getElementById('formulaFormResult');
+
+    html2canvas(source).then((canvas) => {
+
+      let doc = new jsPDF('p', 'mm', 'a4');
+      let height =  canvas.height * 208 / canvas.width;
+      let page0 = canvas.toDataURL('image/png');
+      doc.addImage(page0, 'PNG', 1, 0, 208, height);
+      doc.save('FormulaDietetica');
+    });
   }
 
 }

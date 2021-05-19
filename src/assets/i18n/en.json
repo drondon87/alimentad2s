@@ -7,7 +7,8 @@
         "LOGIN": "Login",
         "WAIT": "Wait ...",
         "CALCULATE": "Calculate",
-        "BACK": "Back"
+        "BACK": "Back",
+        "PRINT": "Print"
     },
     "MENU": {
         "DASHBOARD": "Dashboard",
@@ -15,7 +16,8 @@
         "ADULT_ANTHROPEDIA": "Adult Anthropedia",
         "ADULT_REQUIREMENT": "Adult Requirement",
         "DIETARY_FORMULA": "Dietary Formula",
-        "LOGOUT": "Logout"
+        "LOGOUT": "Logout",
+        "PERSONS": "Persons"
     },
     "PAGES": {
         "MEASURES": {
@@ -126,7 +128,8 @@
         "ADJUSTED_WEIGHT": "Adjusted Weight Calculation",
         "ADULT_ANTHROPEDIA": "Adult Anthropedia Calculation",
         "ADULT_REQUIREMENT": "Adult Requirement Calculation",
-        "DIETARY_FORMULA": "Dietary Formula"
+        "DIETARY_FORMULA": "Dietary Formula",
+        "PERSONS": "Persons"
     },
     "VALIDATIONS": {
         "AUTH": {
@@ -145,7 +148,18 @@
             "FAT_FREE_DOUGH": "Fat Free Dough is required",
             "ACTUAL_WEIGHT_C_METHOD": "Actual Weight is required",
             "PHYSICAL_ACTIVITY_TIME": "Physical Activity Time is required",
-            "PHYSICAL_ACTIVITY_METRIC": "Physical Activity Metric is required"
+            "PHYSICAL_ACTIVITY_METRIC": "Physical Activity Metric is required",
+            "GRAMS": "Grams is required",
+            "RCT": "RCT is required",
+            "TOTAL_FATS": "% Total Fats is required",
+            "SATURATED_FAT": "% Saturated Fats is required",
+            "POLYUNSATURATED_FAT": "% Polyunsaturated Fats is required",
+            "MONOUNSATURATED_FAT": "% Monounsaturated fats is required",
+            "COMPLEX_CARBOHYDRATES": "% Complex Carbohydrates is required",
+            "SIMPLE_CARBOHYDRATES": "% Simple Carbs is required",
+            "DIETARY_FIBER": "Dietary fiber is required",
+            "SODIUM": "Sodium is required",
+            "CHOLESTEROL": "Cholesterol is required"
         }
     }
 }

@@ -22,6 +22,10 @@ const routes: Routes = [
     "path":"pages/requerimientoAdulto",
      loadChildren:()=>import('./requerimiento-adulto/requerimiento-adulto.module').then(mod=>mod.RequerimientoAdultoModule)
   },
+  {
+    "path":"pages/personas",
+     loadChildren:()=>import('./personas/personas.module').then(mod=>mod.PersonasModule)
+  },
   {"path":"",redirectTo:"pages/home",pathMatch:'full'},
   {"path":"**",redirectTo:"pages/home",pathMatch:'full'},
 
