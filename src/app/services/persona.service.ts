@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { PersonaRes } from '../models/PersonaRes.model';
 
 @Injectable({
@@ -20,6 +20,23 @@ export class PersonaService {
       catchError(err => {
         return throwError(err);
       })
-    );;
+    );
+  }
+
+  public getPersonasTodas() {
+    return this._httpClient.get<PersonaRes[]>(this.PERSONA)
+    .pipe(
+      map((resp: any) =>{
+        const personas: PersonaRes[] = resp; 
+        for(let persona of personas){
+          const estatus = (persona.activo) ? 'Activo' : 'Inactivo';
+          persona.status = estatus;
+        }
+        return personas;
+      }),
+      catchError(err => {
+        return throwError(err);
+      })
+    );
   }
 }

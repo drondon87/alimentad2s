@@ -18,7 +18,7 @@ export const personasInitialState: PersonasState = {
 
 const _personasReducer = createReducer(personasInitialState,
 
-    on(personas, (state) => ({ ...state, error: null})),
+    on(personas, state => ({ ...state, error: null})),
     on(personasSuccess, (state, { personasRes }) => ({ 
         ...state, 
         loading: false, 

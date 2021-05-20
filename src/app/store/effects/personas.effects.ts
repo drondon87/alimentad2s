@@ -16,11 +16,11 @@ export class PersonasEffects {
         () => this.accions$.pipe(
             ofType(personasActions.personas),
             mergeMap(
-                (action) => this._personasServices.getPersonas().pipe(
+                () => this._personasServices.getPersonasTodas().pipe(
                     map(personasRes => personasActions.personasSuccess({personasRes})),
                     catchError(payload => of(personasActions.personasError({payload})))
                 )
             )
         )
-    );   
+    ); 
 }
