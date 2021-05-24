@@ -8,7 +8,12 @@
         "WAIT": "Espere ...",
         "CALCULATE": "Calcular",
         "BACK": "Volver",
-        "PRINT": "Imprimir"
+        "PRINT": "Imprimir",
+        "EDIT": "Editar",
+        "HISTORY": "Historial",
+        "DELETE": "Eliminar",
+        "ADULT_ANTHROPEDIA": "Antropedia Adulto",
+        "ADULT_REQUIREMENT": "Requerimiento Adulto"
     },
     "MENU": {
         "DASHBOARD": "Dashboard",
@@ -65,6 +70,15 @@
                 "LIGHT": "Ligero",
                 "INTENSE": "Intenso"
             }
+        },
+        "PERSONS": {
+            "EDIT_PERSON": "Persona Editar de Cedula:",
+            "NAME": "Nombre:",
+            "LASTNAME": "Apellido:",
+            "SEX": "Sexo:",
+            "AGE": "Edad:",
+            "HEIGHT": "Estatura (Mts):",
+            "WEIGHT": "Peso (Kgs):"
         },
         "ANSWERS": {
             "ADJUSTED_WEIGHT": "Peso Ajustado:",

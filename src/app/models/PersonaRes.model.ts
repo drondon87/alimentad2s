@@ -1,7 +1,6 @@
-export class PersonaRes {
+export class Persona {
 
     constructor(
-        public id: number,
         public tipoIdentificacion: string,
         public iden: string,
         public identificacion: string,
@@ -12,6 +11,7 @@ export class PersonaRes {
         public estatura: number,
         public peso: number,
         public activo: boolean,
-        public status: string
+        public status: string,
+        public id?: string
     ){}
   }

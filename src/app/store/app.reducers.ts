@@ -7,8 +7,7 @@ export interface AppState {
     pesoAjustado: reducers.PesoAjustadoState,
     antropediaAdulto: reducers.AntropediaAdultoState,
     requerimientoAdulto: reducers.RequerimientoAdultoState,
-    formulaDietetica: reducers.FormulaDieteticaState,
-    personas: reducers.PersonasState
+    formulaDietetica: reducers.FormulaDieteticaState
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
@@ -16,6 +15,5 @@ export const appReducers: ActionReducerMap<AppState> = {
     pesoAjustado: reducers.pesoAjustadoReducer,
     antropediaAdulto: reducers.antropediaAdultoReducer,
     requerimientoAdulto: reducers.requerimientoAdultoReducer,
-    formulaDietetica: reducers.formulaDieteticaReducer,
-    personas: reducers.personasReducer
+    formulaDietetica: reducers.formulaDieteticaReducer
 }

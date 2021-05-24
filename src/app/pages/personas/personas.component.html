@@ -4,3 +4,19 @@
     </div>
 </div>
 <hr>
+<div class="row">
+    <div class="col-sm-12">
+        <ag-grid-angular style="width: 1000px; height: 280px;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs" [rowSelection]="rowSelection" (selectionChanged)="onSelectionChanged($event)" (gridReady)="onGridReady($event)"></ag-grid-angular>
+    </div>
+</div>
+<div [hidden]="!respuestaServicio" [class]="claseAlert" role="alert">
+    {{mensajeAlert}}
+</div>
+<br>
+<div *ngIf="personas">
+    {{mensajeEditar}}
+</div>
+<br>
+<div *ngIf="editar && persona">
+    <app-persona modo="editar" [persona]="persona"></app-persona>
+</div>

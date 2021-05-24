@@ -8,7 +8,12 @@
         "WAIT": "Wait ...",
         "CALCULATE": "Calculate",
         "BACK": "Back",
-        "PRINT": "Print"
+        "PRINT": "Print",
+        "EDIT": "Edit",
+        "HISTORY": "History",
+        "DELETE": "Delete",
+        "ADULT_ANTHROPEDIA": "Adult Anthropedia",
+        "ADULT_REQUIREMENT": "Adult Requirement"
     },
     "MENU": {
         "DASHBOARD": "Dashboard",
@@ -65,6 +70,15 @@
                 "LIGHT": "Light",
                 "INTENSE": "Intense"
             }
+        },
+        "PERSONS": {
+            "EDIT_PERSON": "Person Edit ID:",
+            "NAME": "First Name:",
+            "LASTNAME": "Last Name:",
+            "SEX": "Sex:",
+            "AGE": "Age:",
+            "HEIGHT": "Height (Mts):",
+            "WEIGHT": "Weight (Kgs):"
         },
         "ANSWERS": {
             "ADJUSTED_WEIGHT": "Adjusted Weight:",

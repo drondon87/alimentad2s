@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-12" *ngIf="modo === 'editar'">
+        <h4>{{ 'PAGES.PERSONS.EDIT_PERSON' | translate }} {{persona.identificacion}}</h4>
+    </div>
+</div>
+<hr>
+<form [formGroup]="personaEditarForm">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.PERSONS.NAME' | translate }}</label>
+            <input type="text" formControlName="nombre" class="form-control" [(ngModel)]="persona.nombre" required>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.PERSONS.LASTNAME' | translate }}</label>
+            <input type="text" formControlName="apellido" class="form-control" [(ngModel)]="persona.apellido" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.PERSONS.SEX' | translate }}</label>
+            <select class="custom-select" class="form-control" id="sexo" [(ngModel)]="persona.sexo" formControlName="sexo">
+                <option></option>
+                <option value="M">{{ 'PAGES.MEASURES.COMBO.MALE_TITLE' | translate }}</option>
+                <option value="F">{{ 'PAGES.MEASURES.COMBO.FEMALE_TITLE' | translate }}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.PERSONS.AGE' | translate }}</label>
+            <input type="number" class="form-control" id="edad" formControlName="edad" [(ngModel)]="persona.edad">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.PERSONS.HEIGHT' | translate }}</label>
+            <input type="number" class="form-control" id="estatura" formControlName="estatura" [(ngModel)]="persona.estatura">
+        </div>
+        <div class="form-group col-md-3">
+            <label>{{ 'PAGES.PERSONS.WEIGHT' | translate }}</label>
+            <input type="number" class="form-control" id="peso" formControlName="peso" [(ngModel)]="persona.peso">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-2">
+            <button class="btn btn-success" (click)="editarP()"><i class="fa fa-edit"></i>&nbsp;{{ 'BUTTON.EDIT' | translate }}</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success" (click)="historialPersona()"><i class="fa fa-clipboard">&nbsp;</i>{{ 'BUTTON.HISTORY' | translate }}</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success" (click)="eliminarPersona()"><i class="fa fa-trash"></i>&nbsp;{{ 'BUTTON.DELETE' | translate }}</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-info" (click)="generarAntropedia()"><i class="fa fa-book"></i>&nbsp;{{ 'BUTTON.ADULT_ANTHROPEDIA' | translate }}</button>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-info" (click)="generarRequerimiento()"><i class="fa fa-book"></i>&nbsp;{{ 'BUTTON.ADULT_REQUIREMENT' | translate }}</button>
+        </div>
+    </div>
+</form>
