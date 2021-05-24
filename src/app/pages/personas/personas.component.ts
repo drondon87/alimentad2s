@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import * as EventEmitter from 'events';
 import { Subscription } from 'rxjs';
 import { Persona } from 'src/app/models/PersonaRes.model';
 import { PersonaService } from 'src/app/services/persona.service';
@@ -95,6 +96,13 @@ export class PersonasComponent implements OnInit {
       this.personas = response;
       this.rowData = response;
       this.mensajeEditar = 'Seleccione una persona a editar';
+    }
+    
+  }
+  
+  personaActualizada(actualizado: boolean){
+    if(actualizado){
+      this.initPersonas();
     }
     
   }

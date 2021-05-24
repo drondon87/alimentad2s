@@ -18,5 +18,5 @@
 </div>
 <br>
 <div *ngIf="editar && persona">
-    <app-persona modo="editar" [persona]="persona"></app-persona>
+    <app-persona modo="editar" [persona]="persona" (actualizado)="personaActualizada($event)"></app-persona>
 </div>
