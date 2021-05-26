@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <h4>{{ 'TITLES.HISTORY' | translate }}</h4>
+    </div>
+</div>
+<hr>
+<div *ngIf="persona">
+    <div class="row">
+        <div class="col-12">
+            <h5>{{ 'PAGES.HISTORY.HISTORY_PERSON' | translate }}{{persona.nombre}} {{persona.apellido}} </h5>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success" [routerLink]="['hantropedia']"><i class="fa fa-clipboard"></i>&nbsp;{{ 'BUTTON.HISTORY_ADULT_ANTHROPEDIA' | translate }}</button>&nbsp;&nbsp;
+            <button class="btn btn-success" [routerLink]="['hrequerimiento']"><i class="fa fa-clipboard"></i>&nbsp;{{ 'BUTTON.HISTORY_ADULT_REQUIREMENT' | translate }}</button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

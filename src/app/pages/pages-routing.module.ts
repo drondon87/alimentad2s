@@ -26,6 +26,10 @@ const routes: Routes = [
     "path":"pages/personas",
      loadChildren:()=>import('./personas/personas.module').then(mod=>mod.PersonasModule)
   },
+  {
+    "path":"pages/historiales/:persona",
+     loadChildren:()=>import('./historiales/historiales.module').then(mod=>mod.HistorialesModule)
+  },
   {"path":"",redirectTo:"pages/home",pathMatch:'full'},
   {"path":"**",redirectTo:"pages/home",pathMatch:'full'},
 

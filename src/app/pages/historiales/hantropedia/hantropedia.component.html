@@ -1,0 +1,142 @@
+<div class="container">
+    <h3>{{ 'TITLES.HISTORY_ADULT_ANTHROPEDIA' | translate }}</h3>
+    <hr>
+    <div class="form-row">
+        <div class="col-sm-12">
+            <ag-grid-angular style="width: 650px; height: 250px;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs" [rowSelection]="rowSelection" (selectionChanged)="onSelectionChanged()" (gridReady)="onGridReady($event)"></ag-grid-angular>
+        </div>
+    </div>
+    <br>
+    <div *ngIf="mostrarInfoAntropedia">
+
+        <div class="form-row">
+            <div class="col-md-12">
+                <b>{{ 'PAGES.HISTORY.MEASURES' | translate }} </b> {{historialAntropedia.fechaCreacion | date:'longDate'}}
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <b>{{ 'PAGES.PERSONS.SEX' | translate }}</b>&nbsp; {{ (historialAntropedia.medidasAntropedia.sexo === 'M') ? 'Masculino' : 'Femenino' }}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.PERSONS.AGE' | translate }}</b>&nbsp; {{ historialAntropedia.medidasAntropedia.edad }} {{ 'PAGES.HISTORY.YEARS' | translate }}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.HISTORY.HEIGHT' | translate }}</b>&nbsp; {{ historialAntropedia.medidasAntropedia.estatura | medidas:'Mt'}}
+            </div>
+            <div class="col-md-3">
+                <b>{{ 'PAGES.HISTORY.WEIGHT' | translate }}</b>&nbsp; {{ historialAntropedia.medidasAntropedia.peso | medidas:'K' }}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <b>C. Brazo Izquierdo:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.cbi | medidas:'c' }}
+            </div>
+            <div class="col-md-3">
+                <b>C. Cintura:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.ccintura | medidas:'c' }}
+            </div>
+            <div class="col-md-3">
+                <b>C. Cadera:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.ccadera | medidas:'c' }}
+            </div>
+            <div class="col-md-3">
+                <b>C. Muñeca:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.cmuneca | medidas:'c' }}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <b>P. Triceps:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.ptriceps | medidas:'M' }}
+            </div>
+            <div class="col-md-3">
+                <b>P. Subescapular:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.psubescapular | medidas:'M' }}
+            </div>
+            <div class="col-md-3">
+                <b>P. Biceps:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.pbiceps | medidas:'M' }}
+            </div>
+            <div class="col-md-3">
+                <b>P. Suprailiaco:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.psuprailiaco | medidas:'M' }}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <b>% Grasa Corporarl:</b>&nbsp; {{ historialAntropedia.medidasAntropedia.porcentajeGCD | medidas:'P' }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <b>Resultados Antropedia: </b>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-5">
+                <b>Estimación Contextura:</b>&nbsp; {{ historialAntropedia.antropediaAdulto.estimacionContextura | medidas:'P' }}
+            </div>
+            <div class="col-md-5">
+                <b>Estimación del índice de masa corporal:</b>&nbsp; {{ historialAntropedia.antropediaAdulto.estimacionIMC | medidas:'KM' }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <b>Estimación de composición corporal</b>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <b>Área magra:</b>&nbsp;{{historialAntropedia.antropediaAdulto.areaMagra | medidas:'C' }}
+            </div>
+            <div class="col-md-3">
+                <b>Área grasa:</b>&nbsp;{{historialAntropedia.antropediaAdulto.areaGrasa | medidas:'C' }}
+            </div>
+            <div class="col-md-3">
+                <b>Indice Cintura Cadera:</b>&nbsp;{{historialAntropedia.antropediaAdulto.indiceCinturaCadera | medidas:'c'}}
+            </div>
+            <div class="col-md-3">
+                <b>Indice Cintura Talla:</b>&nbsp;{{historialAntropedia.antropediaAdulto.indiceCinturaTalla | medidas:'c'}}
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <b>Indice de Sestri</b>&nbsp;{{historialAntropedia.antropediaAdulto.indiceSestri | medidas:'M' }}
+            </div>
+            <div class="col-md-3">
+                <b>Siri</b>&nbsp;{{historialAntropedia.antropediaAdulto.siri | medidas:'P' }}
+            </div>
+            <div class="col-md-3">
+                <b>A partir Circ. Cintura</b>&nbsp; {{historialAntropedia.antropediaAdulto.circunsferenciaCintura | medidas:'P' }}
+            </div>
+            <div class="col-md-3">
+                <b>Masa Grasa</b>&nbsp; {{historialAntropedia.antropediaAdulto.valorAbsoluto | medidas:'k'}}
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <b>Masa libre grasa</b>&nbsp; {{historialAntropedia.antropediaAdulto.masaLibreGrasa | medidas:'k' }}
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-3">
+                <b>Hamwi</b>&nbsp; {{historialAntropedia.antropediaAdulto.hamwi | medidas:'k' }}
+            </div>
+            <div class="col-md-3">
+                <b>West</b>&nbsp; {{historialAntropedia.antropediaAdulto.west | medidas:'k' }}
+            </div>
+            <div class="col-md-3">
+                <b>Broca</b>&nbsp; {{historialAntropedia.antropediaAdulto.broca | medidas:'k' }}
+            </div>
+            <div class="col-md-3">
+                <b>Derivadas del IMC</b>&nbsp; {{historialAntropedia.antropediaAdulto.derivadaIMC | medidas:'k' }}
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <b>Peso deseable función MLG</b>&nbsp; {{historialAntropedia.antropediaAdulto.pesoDeseableMLG | medidas:'k' }}
+            </div>
+        </div>
+
+    </div>
+</div>

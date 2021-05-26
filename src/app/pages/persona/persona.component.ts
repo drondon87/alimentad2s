@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/services/persona.service';
 import Swal from 'sweetalert2';
 import { Persona } from '../../models/PersonaRes.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-persona',
@@ -24,7 +25,8 @@ export class PersonaComponent implements OnInit {
   mensajeEditar: string = '';
 
   constructor(private _formBuilder: FormBuilder,
-              private _personaServices: PersonaService) { }
+              private _personaServices: PersonaService,
+              private _router: Router) { }
 
   ngOnInit() {
     this.inicializarCamposFormulario();
@@ -84,11 +86,11 @@ export class PersonaComponent implements OnInit {
   }
 
   historialPersona(){
-
+    this._router.navigate([`pages/historiales/${this.persona.id}`]); 
   }
 
   eliminarPersona(){
-    
+
     Swal.fire({
       title: '¿Seguro que quiere eliminar esta Persona?',
       icon: 'warning',

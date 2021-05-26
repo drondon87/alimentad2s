@@ -13,7 +13,9 @@
         "HISTORY": "History",
         "DELETE": "Delete",
         "ADULT_ANTHROPEDIA": "Adult Anthropedia",
-        "ADULT_REQUIREMENT": "Adult Requirement"
+        "ADULT_REQUIREMENT": "Adult Requirement",
+        "HISTORY_ADULT_ANTHROPEDIA": "History Adult Anthropedia",
+        "HISTORY_ADULT_REQUIREMENT": "History Adult Requirement"
     },
     "MENU": {
         "DASHBOARD": "Dashboard",
@@ -136,6 +138,13 @@
                 "WATER_REQUIREMENT_KCAL": "Water Requirement (Kcal base)",
                 "WATER_GLASSES": "Amount of Glasses of Water per Day"
             }
+        },
+        "HISTORY": {
+            "HISTORY_PERSON": "History of ",
+            "MEASURES": "Date measures: ",
+            "YEARS": "years",
+            "HEIGHT": "Height:",
+            "WEIGHT": "Weight:"
         }
     },
     "TITLES": {
@@ -143,7 +152,10 @@
         "ADULT_ANTHROPEDIA": "Adult Anthropedia Calculation",
         "ADULT_REQUIREMENT": "Adult Requirement Calculation",
         "DIETARY_FORMULA": "Dietary Formula",
-        "PERSONS": "Persons"
+        "PERSONS": "Persons",
+        "HISTORY": "Persons History",
+        "HISTORY_ADULT_ANTHROPEDIA": "History List Adult Anthropedia",
+        "HISTORY_ADULT_REQUIREMENT": "History List Adult Requirement"
     },
     "VALIDATIONS": {
         "AUTH": {

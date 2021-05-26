@@ -6,7 +6,6 @@ import { pesoAjustadoReducer } from '../store/reducers';
 import { PagesRoutingModule } from './pages-routing.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [

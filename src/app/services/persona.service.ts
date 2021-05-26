@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Persona } from '../models/PersonaRes.model';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Persona } from '../models/PersonaRes.model';
 })
 export class PersonaService {
 
-  private BASE_URL = 'http://localhost:8080/api/v1';
+  private BASE_URL = environment.base_url;
   private PERSONA = this.BASE_URL + '/persona';
 
   constructor(private _httpClient: HttpClient) { }
