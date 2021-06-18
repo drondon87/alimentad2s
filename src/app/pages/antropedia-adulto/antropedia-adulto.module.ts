@@ -16,6 +16,7 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     TranslateModule,
     ReactiveFormsModule,
     PipesModule
-  ]
+  ],
+  exports: [AntropediaAdultoComponent]
 })
 export class AntropediaAdultoModule { }

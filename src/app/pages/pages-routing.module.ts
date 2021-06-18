@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReqAdultoPersonaModule } from './req-adulto-persona/req-adulto-persona.module';
 
 const routes: Routes = [
   {
@@ -29,6 +30,14 @@ const routes: Routes = [
   {
     "path":"pages/historiales/:persona",
      loadChildren:()=>import('./historiales/historiales.module').then(mod=>mod.HistorialesModule)
+  },
+  {
+    "path":"pages/antropediaAdulto/:persona",
+     loadChildren:()=>import('./antropedia-adulto-persona/antropedia-adulto-persona.module').then(mod=>mod.AntropediaAdultoPersonaModule)
+  },
+  {
+    "path":"pages/requerimientoAdulto/:persona",
+     loadChildren:()=>import('./req-adulto-persona/req-adulto-persona.module').then(mod=>mod.ReqAdultoPersonaModule)
   },
   {"path":"",redirectTo:"pages/home",pathMatch:'full'},
   {"path":"**",redirectTo:"pages/home",pathMatch:'full'},

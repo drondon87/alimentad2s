@@ -10,6 +10,7 @@ const routes: Routes = [
     children: [
       { path: 'hantropedia', component: HantropediaComponent},
       { path: 'hrequerimiento', component: HrequerimientoComponent },
+      { path: '**', pathMatch: 'full', redirectTo: 'hantropedia'}
     ]
   }
 ];

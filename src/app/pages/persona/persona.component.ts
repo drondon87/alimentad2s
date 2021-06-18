@@ -112,9 +112,11 @@ export class PersonaComponent implements OnInit {
   }
 
   generarAntropedia(){
-
+    this._router.navigate([`pages/antropediaAdulto/${this.persona.id}`]); 
   }
 
-  generarRequerimiento(){}
+  generarRequerimiento(){
+    this._router.navigate([`pages/requerimientoAdulto/${this.persona.id}`]); 
+  }
 
 }

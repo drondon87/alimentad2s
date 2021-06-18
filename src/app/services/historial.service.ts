@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { HistorialAntropediaAdulto } from '../models/Historial-Antropedia.model';
 import { HistorialRequerimientoAdulto } from '../models/Historial-Requerimiento.model';
 import { Persona } from '../models/PersonaRes.model';
+import { SaveHistorialAntropediaAdulto } from '../models/save-historial-antro.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class HistorialService {
       .pipe(catchError(this.errorHandler));
   }
 
-  public guardarHistorialAntropedia(request){
+  public guardarHistorialAntropedia(request: SaveHistorialAntropediaAdulto){
     return this.httpClient.post<any>(this.HISTORIAL_ANTROPEDIA, request)
       .pipe(catchError(this.errorHandler));
   }
@@ -43,8 +44,8 @@ export class HistorialService {
       .pipe(catchError(this.errorHandler));
   }
 
-  public getHistorialesRequerimientoAdultoByPersona(request) {
-    return this.httpClient.get<HistorialRequerimientoAdulto[]>(this.HISTORIAL_REQUERIMIENTO +'/'+ request)
+  public getHistorialesRequerimientoAdultoByPersona(idPersona: string) {
+    return this.httpClient.get<HistorialRequerimientoAdulto[]>(this.HISTORIAL_REQUERIMIENTO +'/'+ idPersona)
       .pipe(catchError(this.errorHandler));
   }
 

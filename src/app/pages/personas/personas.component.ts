@@ -33,8 +33,7 @@ export class PersonasComponent implements OnInit {
     {headerName: 'Cédula', field: 'identificacion', sortable:true },
     {headerName: 'Nombre', field: 'nombre', sortable:true },
     {headerName: 'Apellido', field: 'apellido', sortable:true},
-    {headerName: 'Edad', field: 'edad', sortable:true},
-    {headerName: 'Estatus', field: 'status', sortable:true}
+    {headerName: 'Edad', field: 'edad', sortable:true}
 ];
 
   constructor(private _personaServices: PersonaService) { }
@@ -83,7 +82,7 @@ export class PersonasComponent implements OnInit {
   initPersonas(){
     this.editar = false;
     this.respuestaServicio = false;
-    this._personaServices.getPersonasTodas().subscribe(response => this.handleSuccessfulResponse(response));
+    this._personaServices.getPersonas().subscribe(response => this.handleSuccessfulResponse(response));
   }
 
   handleSuccessfulResponse(response) {

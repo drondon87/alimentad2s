@@ -1,1 +1,118 @@
-<p>hrequerimiento works!</p>
+<div class="container">
+    <br>
+    <h1>Historiales de Requerimiento Adulto</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <ag-grid-angular style="width: 650px; height: 250px;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs" [rowSelection]="rowSelection" (selectionChanged)="onSelectionChanged($event)" (gridReady)="onGridReady($event)"></ag-grid-angular>
+        </div>
+    </div>
+    <br>
+    <div *ngIf="mostrarInfoRequerimiento">
+        <div class="row">
+            <div class="col-md-12">
+                <b>Medidas en Fecha: </b> {{historialRequerimiento.fechaCreacion | date:'longDate'}}
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <b>Sexo:</b>&nbsp; {{ sexo }}
+            </div>
+            <div class="col-md-4">
+                <b>Edad:</b>&nbsp; {{ historialRequerimiento.medidaRequerimiento.edad }} años
+            </div>
+            <div class="col-md-4">
+                <b>Peso Recomendado:</b>&nbsp; {{ historialRequerimiento.medidaRequerimiento.peso }} Kgs
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <b>Factor Actividad:</b>&nbsp; {{ factorActividad }}
+            </div>
+            <div class="col-md-4">
+                <b>Kcal (método directo):</b>&nbsp; {{ historialRequerimiento.medidaRequerimiento.kcal }}
+            </div>
+            <div class="col-md-4">
+                <b>Nivel Actividad Física:</b>&nbsp; {{ nivelActividad }}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <b>Masa Libre de Grasa:</b>&nbsp; {{ historialRequerimiento.medidaRequerimiento.masaGrasaKg }}
+            </div>
+            <div class="col-md-4">
+                <b>Peso Actual (método cunningham):</b>&nbsp; {{ historialRequerimiento.medidaRequerimiento.pesoActual }}
+            </div>
+            <div class="col-md-4">
+                <b>Tiempo Actividad Física::</b>&nbsp; {{ historialRequerimiento.medidaRequerimiento.tiempoActividadFisica }}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <b>Metrica Actividad Física:</b>&nbsp; {{ metricaSelected.descripcion }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <b>Resultados Requerimiento: </b>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <b>Requerimiento Calórico Total</b>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <b>Método Tradicional</b>
+            </div>
+            <div class="col-md-6">
+                <b>Método Directo</b>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-2">
+                <b>RCB</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.mtRCB}}
+            </div>
+            <div class="col-md-2">
+                <b>ADE</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.mtADE}}
+            </div>
+            <div class="col-md-2">
+                <b>RCT</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.mtRCT}}
+            </div>
+            <div class="col-md-2">
+                <b>&nbsp;</b> {{historialRequerimiento.requerimientoAdulto.metodoDirecto}}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <b>Método Simplificado (OMS)</b>
+            </div>
+            <div class="col-md-8">
+                <b>Método Cunningham</b>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-2">
+                <b>TMB</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.tasaMetabolicaBasal}}
+            </div>
+            <div class="col-md-2">
+                <b>RCT</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.requerimientoCaloricoTotal}}
+            </div>
+            <div class="col-md-2">
+                <b>TMR</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.tasaMetabolicaReposo}}
+            </div>
+            <div class="col-md-2">
+                <b>GEAF</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.gastoEnergeticoActividadFisica}}
+            </div>
+            <div class="col-md-2">
+                <b>ADE</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.accionDinamicaEspecifica}}
+            </div>
+            <div class="col-md-2">
+                <b>GCT</b>&nbsp; {{historialRequerimiento.requerimientoAdulto.gastoCaloricaTotal}}
+            </div>
+        </div>
+    </div>
+</div>

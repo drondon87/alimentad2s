@@ -15,7 +15,8 @@
         "ADULT_ANTHROPEDIA": "Adult Anthropedia",
         "ADULT_REQUIREMENT": "Adult Requirement",
         "HISTORY_ADULT_ANTHROPEDIA": "History Adult Anthropedia",
-        "HISTORY_ADULT_REQUIREMENT": "History Adult Requirement"
+        "HISTORY_ADULT_REQUIREMENT": "History Adult Requirement",
+        "SAVE_HISTORY": "Save History"
     },
     "MENU": {
         "DASHBOARD": "Dashboard",
@@ -144,7 +145,17 @@
             "MEASURES": "Date measures: ",
             "YEARS": "years",
             "HEIGHT": "Height:",
-            "WEIGHT": "Weight:"
+            "WEIGHT": "Weight:",
+            "ARM_CIRCUMFERENCE": "Arm C.:",
+            "WAIST_CIRCUMFERENCE": "Waist C.:",
+            "HIP_CIRCUMFERENCE": "Hip C.:",
+            "WIRST_CIRCUMFERENCE": "Wrist C.:",
+            "TRICEPS_FOLD": "Triceps F.:",
+            "SUBSCAPULAR_FOLD": "Subscapular F.:",
+            "BICEPS_FOLD": "Biceps F.:",
+            "SUPRAILIAC_FOLD": "Suprailiac F.:",
+            "DESIRABLE_BODY_FAT": "% Body Fat:",
+            "ADULT_ANTHROPEDIA_RESULTS": "Adult Anthropedia Results:"
         }
     },
     "TITLES": {
