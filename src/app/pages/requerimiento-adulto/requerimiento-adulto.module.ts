@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RequerimientoAdultoRoutingModule,
     TranslateModule,
     ReactiveFormsModule
-  ]
+  ],
+  exports: [RequerimientoAdultoComponent]
 })
 export class RequerimientoAdultoModule { }

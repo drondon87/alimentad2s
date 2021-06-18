@@ -6,7 +6,7 @@
 <hr>
 <form [formGroup]="reqAdultoForm" (ngSubmit)="calcularRequerimientoAdulto()" *ngIf="!respuesta">
     <div class="form-row">
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-3" *ngIf="!tienePersona">
             <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
             <select [class.is-invalid]="sexo.invalid && sexo.touched" class="custom-select" id="sexo" formControlName="sexo">
             <option></option>
@@ -15,10 +15,22 @@
             </select>
             <small class="text-danger " *ngIf="sexo.invalid && sexo.touched ">{{ 'VALIDATIONS.MEASURES.SEX' | translate }}</small>
         </div>
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-3" *ngIf="tienePersona">
+            <label>{{ 'PAGES.MEASURES.SEX' | translate }}</label>
+            <select class="custom-select" id="sexo" formControlName="sexo" disabled>
+            <option></option>
+            <option value="M">{{ 'PAGES.MEASURES.COMBO.MALE_TITLE' | translate }}</option>
+            <option value="F">{{ 'PAGES.MEASURES.COMBO.FEMALE_TITLE' | translate }}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3" *ngIf="!tienePersona">
             <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
             <input [class.is-invalid]="edad.invalid && edad.touched" type="number" class="form-control" id="edad" formControlName="edad">
             <small class="text-danger " *ngIf="edad.invalid && edad.touched ">{{ 'VALIDATIONS.MEASURES.AGE' | translate }}</small>
+        </div>
+        <div class="form-group col-md-3" *ngIf="tienePersona">
+            <label>{{ 'PAGES.MEASURES.AGE' | translate }}</label>
+            <input type="number" class="form-control" id="edad" formControlName="edad" disabled>
         </div>
         <div class="form-group col-md-3">
             <label>{{ 'PAGES.MEASURES.RECOMMENDED_WEIGHT' | translate }}</label>
@@ -144,8 +156,14 @@
         </div>
         <br>
         <div class="form-row mt-2">
-            <div class="col-md-6">
+            <div class="col-md-2">
                 <button class="btn btn-success" (click)="volver() "><i class="fa fa-backward "></i>&nbsp;&nbsp;{{ 'BUTTON.BACK' | translate }}</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success" (click)="imprimirPDF()"><i class="fa fa-file-pdf"></i>&nbsp;{{ 'BUTTON.PRINT' | translate }}</button>
+            </div>
+            <div class="col-md-2" *ngIf="tienePersona">
+                <button class="btn btn-success" (click)="guardarHistorial()"><i class="fa fa-save"></i>&nbsp;{{ 'BUTTON.SAVE_HISTORY' | translate }}</button>
             </div>
         </div>
     </div>

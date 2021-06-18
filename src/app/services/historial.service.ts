@@ -7,6 +7,7 @@ import { HistorialAntropediaAdulto } from '../models/Historial-Antropedia.model'
 import { HistorialRequerimientoAdulto } from '../models/Historial-Requerimiento.model';
 import { Persona } from '../models/PersonaRes.model';
 import { SaveHistorialAntropediaAdulto } from '../models/save-historial-antro.model';
+import { SaveHistorialRequerimientoAdulto } from '../models/save-historial-req.model';
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +50,7 @@ export class HistorialService {
       .pipe(catchError(this.errorHandler));
   }
 
-  public guardarHistorialRequerimiento(request){
+  public guardarHistorialRequerimiento(request: SaveHistorialRequerimientoAdulto){
     return this.httpClient.post<any>(this.HISTORIAL_REQUERIMIENTO, request);
   }
 

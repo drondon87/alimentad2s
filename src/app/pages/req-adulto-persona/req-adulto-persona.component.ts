@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-req-adulto-persona',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReqAdultoPersonaComponent implements OnInit {
 
-  constructor() { }
+  public idPersona: string;
+
+  constructor(private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this._activatedRoute.parent.params
+      .subscribe(({persona}) => this.idPersona = persona);
   }
 
 }
